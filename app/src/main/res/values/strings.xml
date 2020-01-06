@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">RalliKuulekus</string>
+    <string name="uus_joonis">UUS JOONIS</string>
+    <string name="lae_joonis">LAE JOONIS</string>
 </resources>
