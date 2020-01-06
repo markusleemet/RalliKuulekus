@@ -2,4 +2,11 @@
     <string name="app_name">RalliKuulekus</string>
     <string name="uus_joonis">UUS JOONIS</string>
     <string name="lae_joonis">LAE JOONIS</string>
+    <string name="name">Nimi</string>
+    <string name="description">Kirjeldus</string>
+    <string name="create_schema">Loo joonis</string>
+    <string name="rk1">rk1</string>
+    <string name="rk2">rk2</string>
+    <string name="rk3">rk3</string>
+    <string name="rk4">rk4</string>
 </resources>

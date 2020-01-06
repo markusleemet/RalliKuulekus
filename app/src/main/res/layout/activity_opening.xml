@@ -4,13 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".OpeningActivity">
+    tools:context=".activities.OpeningActivity">
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/button_new_schema"
         style="@style/Widget.MaterialComponents.Button.OutlinedButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:onClick="openCreationActivity"
         android:text="@string/uus_joonis"
         app:layout_constraintBottom_toTopOf="@+id/button_load_schema"
         app:layout_constraintEnd_toEndOf="parent"
