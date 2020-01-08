@@ -11,18 +11,12 @@ class CreationDetailsActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        hideSystemUI(window)
         setContentView(R.layout.activity_creation_details)
     }
 
     fun openMainActivity(v: View) {
         val mainActivityIntent = Intent(this, MainActivity::class.java)
         startActivity(mainActivityIntent)
-    }
-
-    override fun onWindowFocusChanged(hasFocus: Boolean) {
-        super.onWindowFocusChanged(hasFocus)
-        if (hasFocus) hideSystemUI(window)
     }
 
 }

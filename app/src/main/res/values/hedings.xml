@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    //RK1
+    <string name="start">Start</string>
+    <string name="finis">Finiš</string>
+    <string name="istu">Istu</string>
+    <string name="istu_lama">Istu, lama</string>
+    <string name="poore_paremale">Pööre paremale</string>
+    <string name="poore_vasakule">Pööre vasakule</string>
+    <string name="umberpoord_paremale">Ümberpöörd paremale</string>
+    <string name="umberpoord_vasakule">Ümberpöörd vasakule</string>
+    <string name="paremale_270">270° paremale</string>
+    <string name="vasakule_270">270° vasakule</string>
+    <string name="paremale_360">360° paremale</string>
+    <string name="vasakule_360">360° vasakule</string>
+    <string name="istu_ette_paremalt_korvale_edasi">Istu ette, paremalt kõrvale, edasi</string>
+    <string name="istu_ette_vasakult_korvale_edasi">Istu ette, vasakult kõrvale, edasi</string>
+    <string name="istu_ette_paremalt_korvale_istu">Istu ette, paremalt kõrvale, istu</string>
+    <string name="istu_ette_vasakult_korvale_istu">Istu ette, vasakult kõrvale, istu</string>
+    <string name="aeglane_tempo">Aeglane tempo</string>
+    <string name="joostes">Joostes</string>
+    <string name="normaalne_tempo">Normaaltempo</string>
+    <string name="samm_paremale">Samm paremale</string>
+    <string name="spiraal_paremale">Spiraal paremale</string>
+    <string name="spiraal_vasakule">Spiraal vasakule</string>
+    <string name="slaalom">Slaalom</string>
+    <string name="topelt_slaalom">Topelt slaalom</string>
+    <string name="istu_1_2_3_sammu_edasi">Istu, 1, 2, 3 sammu edasi</string>
+    <string name="istu_ette_1_2_3_sammu_tagasi">Istu ette, 1, 2, 3 sammu tagasi</string>
+    <string name="lama">Lama</string>
+    <string name="istu_jookse">Istu, jookse</string>
+    <string name="umberpoord_koer_tagant">Ümberpöörd, koer tagant</string>
+    <string name="istu_ring_umber_koera">Istu, ring ümber koera</string>
+    <string name="istu_lama_ring_umber_koera">Istu, lama, ring ümber koera</string>
+    <string name="istu_seisa">Istu, seisa</string>
+
+    <array name="RK1_hedings">
+        <item>@string/start</item>
+        <item>@string/finis</item>
+        <item>@string/istu</item>
+        <item>@string/istu_lama</item>
+        <item>@string/poore_paremale</item>
+        <item>@string/poore_vasakule</item>
+        <item>@string/umberpoord_paremale</item>
+        <item>@string/umberpoord_vasakule</item>
+        <item>@string/paremale_270</item>
+        <item>@string/vasakule_270</item>
+        <item>@string/paremale_360</item>
+        <item>@string/vasakule_360</item>
+        <item>@string/istu_ette_paremalt_korvale_edasi</item>
+        <item>@string/istu_ette_vasakult_korvale_edasi</item>
+        <item>@string/istu_ette_paremalt_korvale_istu</item>
+        <item>@string/istu_ette_vasakult_korvale_istu</item>
+        <item>@string/aeglane_tempo</item>
+        <item>@string/joostes</item>
+        <item>@string/normaalne_tempo</item>
+        <item>@string/samm_paremale</item>
+        <item>@string/spiraal_paremale</item>
+        <item>@string/spiraal_vasakule</item>
+        <item>@string/slaalom</item>
+        <item>@string/topelt_slaalom</item>
+        <item>@string/istu_1_2_3_sammu_edasi</item>
+        <item>@string/istu_ette_1_2_3_sammu_tagasi</item>
+        <item>@string/lama</item>
+        <item>@string/istu_jookse</item>
+        <item>@string/umberpoord_koer_tagant</item>
+        <item>@string/istu_ring_umber_koera</item>
+        <item>@string/istu_lama_ring_umber_koera</item>
+        <item>@string/istu_seisa</item>
+
+    </array>
+
+    //RK2
+    <string name="istu_umberpoord_paremale_edasi">Istu, ümberpöörd paremale, edasi</string>
+    <string name="istu_umberpoord_vasakule_edasi">Istu, ümberpöörd vasakule, edasi</string>
+    <string name="saada_ule_tokke">Saada üle tõkke</string>
+    <string name="istu_jata_istuma_poora_paremae_1_samm_kutsu_juurde_istu">Istu, jäta istuma, pööra paremale, 1 samm, kutsu juurde, istu</string>
+    <string name="istu_siesa_tee_ring_umber_koera">Istu, seisa, tee ring ümber koera</string>
+    <string name="ahvatluste_kaheksa">Ahvatluste kaheksa</string>
+    <string name="istu_samm_paremale_istu">Istu, samm paremale, istu</string>
+    <string name="istu_istu_ette_paremalt_korvale_istu">Istu, istu ette, paremalt kõrvale, istu</string>
+    <string name="istu_istu_ette_vasakult_korvale_istu">Istu, istu ette, vasakult kõrvale, istu</string>
+    <string name="istu_lama_istu">Istu,lama, istu</string>
+    <string name="poore_paremale_istu">Pööre paremale, istu</string>
+    <string name="poore_vasakule_istu">Pööre vasakule, istu</string>
+    <string name="istu_poore_paremale_1_samm_istu">Istu, pööre paremale, 1 samm, istu</string>
+    <string name="istu_poore_vasakule_1_samm_istu">Istu, pööre vasakule, 1 samm, istu</string>
+    <string name="keerutus_liikumise_ajal">Keerutus liikumise ajal</string>
+    <string name="samm_vasakue">Samm vasakule</string>
+    <string name="istu_jata_istuma_poora_vasakule_1_samm_kutsu_juurde_istu">Istu, jäta istuma, pööre vasakule, 1 samm, kutsu juurde, istu</string>
+    <string name="istu_samm_vasakule_istu">Istu, samm vasakule, istu</string>
+
+    <array name="RK2_headings">
+        <item>@string/istu_umberpoord_paremale_edasi</item>
+        <item>@string/istu_umberpoord_vasakule_edasi</item>
+        <item>@string/saada_ule_tokke</item>
+        <item>@string/istu_jata_istuma_poora_paremae_1_samm_kutsu_juurde_istu</item>
+        <item>@string/istu_siesa_tee_ring_umber_koera</item>
+        <item>@string/ahvatluste_kaheksa</item>
+        <item>@string/istu_samm_paremale_istu</item>
+        <item>@string/istu_istu_ette_paremalt_korvale_istu</item>
+        <item>@string/istu_istu_ette_vasakult_korvale_istu</item>
+        <item>@string/istu_lama_istu</item>
+        <item>@string/poore_paremale_istu</item>
+        <item>@string/poore_vasakule_istu</item>
+        <item>@string/istu_poore_paremale_1_samm_istu</item>
+        <item>@string/istu_poore_vasakule_1_samm_istu</item>
+        <item>@string/keerutus_liikumise_ajal</item>
+        <item>@string/samm_vasakue</item>
+        <item>@string/istu_jata_istuma_poora_vasakule_1_samm_kutsu_juurde_istu</item>
+        <item>@string/istu_samm_vasakule_istu</item>
+    </array>
+
+    //RK3
+
+    <string name="istu_poore_paremale_istu">Istu, pööre paremale, istu</string>
+    <string name="istu_poore_vasakule_istu">Istu, pööre vasakule, istu</string>
+    <string name="istu_umberpoord_paremale_istu">Istu, ümberpöörd paremale, istu</string>
+    <string name="istu_umberpoord_vasakule_istu">Istu, ümberpöörd vasakule, istu</string>
+    <string name="istu_seisa_lama">Istu, seisa, lama</string>
+    <string name="istu_seisa_istu">Istu, seisa, istu</string>
+    <string name="istu_eemaldu_kutsu_juurde">Istu, eemaldu, kutsu juurde</string>
+    <string name="liikumiselt_lama_ring_umber">Liikumiselt lama, ring ümber</string>
+    <string name="kolm_sammu_tagasi">Kolm sammu tagasi</string>
+    <string name="istu_saada_ule_tokke">Istu saada üle tõkke</string>
+    <string name="umberpoord_teineteise_poole">Ümberpöörd teineteise poole</string>
+    <string name="umberpoord_teineteisest_eemale">Ümberpöörd teineteisest eemale</string>
+    <string name="poole_vahetus_ees">Poole vahetus ees</string>
+    <string name="pusivusvote">Püsivusvõte</string>
+
+
+    <array name="RK3_headings">
+        <item>@string/istu_poore_paremale_istu</item>
+        <item>@string/istu_poore_vasakule_istu</item>
+        <item>@string/istu_umberpoord_paremale_istu</item>
+        <item>@string/istu_umberpoord_vasakule_istu</item>
+        <item>@string/istu_seisa_lama</item>
+        <item>@string/istu_seisa_istu</item>
+        <item>@string/istu_eemaldu_kutsu_juurde</item>
+        <item>@string/liikumiselt_lama_ring_umber</item>
+        <item>@string/kolm_sammu_tagasi</item>
+        <item>@string/istu_saada_ule_tokke</item>
+        <item>@string/umberpoord_teineteise_poole</item>
+        <item>@string/umberpoord_teineteisest_eemale</item>
+        <item>@string/poole_vahetus_ees</item>
+        <item>@string/pusivusvote</item>
+    </array>
+
+    //RK4
+
+    <array name="RK4_headings">
+        <item></item>
+    </array>
+</resources>

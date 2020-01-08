@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activities.SignClassSelectionActivity"></activity>
+        <activity android:name=".activities.SignSelectionActivity"></activity>
+        <activity android:name=".activities.SignClassSelectionActivity" />
         <activity android:name=".activities.MainActivity" />
         <activity android:name=".activities.CreationDetailsActivity" />
         <activity android:name=".activities.OpeningActivity">

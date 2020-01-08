@@ -9,7 +9,6 @@ import cs.ut.ee.rallikuulekus.functions.hideSystemUI
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
-    private val SIGN_CLASS_SELECTION_ACTIVITY_CONSTANT = 11
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -22,7 +21,7 @@ class MainActivity : AppCompatActivity() {
 
     fun openSignClassSelectionActivity(v: View){
         val signClassSelectionIntent = Intent(this, SignClassSelectionActivity::class.java)
-        startActivityForResult(signClassSelectionIntent, SIGN_CLASS_SELECTION_ACTIVITY_CONSTANT)
+        startActivity(signClassSelectionIntent)
     }
 
     override fun onWindowFocusChanged(hasFocus: Boolean) {

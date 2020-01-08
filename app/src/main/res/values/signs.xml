@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    //RK1
+    <array name="RK1_signs">
+        <item>@drawable/ic_start</item>
+        <item>@drawable/ic_finis</item>
+        <item>@drawable/ic_istu</item>
+        <item>@drawable/ic_istu_lama</item>
+        <item>@drawable/ic_poore_paremale</item>
+        <item>@drawable/ic_poore_vasakule</item>
+        <item>@drawable/ic_umberpoord_paremale</item>
+        <item>@drawable/ic_umberpoord_vasakule</item>
+        <item>@drawable/ic_270_paremale</item>
+        <item>@drawable/ic_270_vasakule</item>
+        <item>@drawable/ic_360_paremale</item>
+        <item>@drawable/ic_360_vasakule</item>
+        <item>@drawable/ic_istu_ette_paremalt_korvale_edasi</item>
+        <item>@drawable/ic_istu_ette_vasakult_korvale_edasi</item>
+        <item>@drawable/ic_istu_ette_paremalt_korvale_istu</item>
+        <item>@drawable/ic_istu_ette_vasakult_korvale_istu</item>
+        <item>@drawable/ic_aeglane_tempo</item>
+        <item>@drawable/ic_joostes</item>
+        <item>@drawable/ic_normaal_tempo</item>
+        <item>@drawable/ic_samm_paremale</item>
+        <item>@drawable/ic_spiraal_paremale</item>
+        <item>@drawable/ic_spiraal_vasakule</item>
+        <item>@drawable/ic_slaalom</item>
+        <item>@drawable/ic_topeltslaalom</item>
+        <item>@drawable/ic_istu_1_2_3_sammu_edasi</item>
+        <item>@drawable/ic_istu_ette_1_2_3_sammu_tagasi</item>
+        <item>@drawable/ic_lama</item>
+        <item>@drawable/ic_istu_jookse</item>
+        <item>@drawable/ic_umberpoord_koer_tagant</item>
+        <item>@drawable/ic_istu_ring_umber_koera</item>
+        <item>@drawable/ic_istu_lama_ring_umber_koera</item>
+        <item>@drawable/ic_istu_seisa</item>
+
+
+
+    </array>
+
+    //RK2
+    <array name="RK2_signs">
+        <item>@drawable/ic_istu_umberpoord_paremale_edasi</item>
+        <item>@drawable/ic_istu_umberpoord_vasakule_edasi</item>
+        <item>@drawable/ic_saada_ule_tokke</item>
+        <item>@drawable/ic_isu_jata_istuma_poora_paremale_1_samm_kutsu_juurse_istu</item>
+        <item>@drawable/ic_istu_seis_ring_umber</item>
+        <item>@drawable/ic_ahvatluste_kaheksa</item>
+        <item>@drawable/ic_istu_samm_paremale_istu</item>
+        <item>@drawable/ic_istu_istu_ette_paremalt_korvale_istu</item>
+        <item>@drawable/ic_istu_istu_ette_vasakult_korvale_istu</item>
+        <item>@drawable/ic_istu_lama_istu</item>
+        <item>@drawable/ic_poore_paremale_istu</item>
+        <item>@drawable/ic_poore_vasakule</item>
+        <item>@drawable/ic_istu_poore_paremale_1_samm_istu</item>
+        <item>@drawable/ic_istu_poore_vasakule_1_samm_istu</item>
+        <item>@drawable/ic_tiir_liikumise_ajal</item>
+        <item>@drawable/ic_samm_vasakule</item>
+        <item>@drawable/ic_isu_jata_istuma_poora_vasakule_1_samm_kutsu_juurse_istu</item>
+        <item>@drawable/ic_istu_samm_vasakule_istu</item>
+    </array>
+
+    //RK3
+    <array name="RK3_signs">
+        <item>@drawable/ic_istu_poore_paremale_istu</item>
+        <item>@drawable/ic_istu_poore_vasakule_istu</item>
+        <item>@drawable/ic_istu_umberpoord_paremale_istu</item>
+        <item>@drawable/ic_istu_umberpoord_vasakule_istu</item>
+        <item>@drawable/ic_istu_seisa_lama</item>
+        <item>@drawable/ic_istu_seisa_istu</item>
+        <item>@drawable/ic_istu_eemaldu_kutsu_juurde</item>
+        <item>@drawable/ic_liikumiselt_lama_ring_umber</item>
+        <item>@drawable/ic_kolm_sammu_tagasi</item>
+        <item>@drawable/ic_istu_saada_ule_tokke</item>
+        <item>@drawable/ic_umberpoord_teineteise_poole</item>
+        <item>@drawable/ic_umberpoord_teineteisest_eemale</item>
+        <item>@drawable/ic_poole_vahetus_ees</item>
+        <item>@drawable/ic_pusivusvote</item>
+    </array>
+
+    //RK4
+    <array name="RK4_signs">
+        <item></item>
+    </array>
+</resources>

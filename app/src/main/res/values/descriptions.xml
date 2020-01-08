@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+    //RK1
+    <string name="start_description">Siit algab rada. Stardiasend sildi juures: koerajuht seisab, koer istub juhi vasakul käel.</string>
+    <string name="finis_description">Siin lõpeb rada.</string>
+    <string name="istu_description">Koerajuht peatub ja koer istub koerajuhi kõrvale. Kui koer on istunud, jätkab võistluspaar liikumist.</string>
+    <string name="istu_lama_description">Koerajuht peatub ja koer istub koerajuhi kõrvale. Koerajuht annab koerale käskluse „Lama“. Kui koer on lamama läinud, jätkab võistluspaar liikumist.</string>
+    <string name="poore_paremale_description">Võistluspaar pöörab 90° paremale. Koer peab koerajuhile pöördel järgnema. Pööre tuleb sooritada sujuva, tiheda kaarena või paigal.</string>
+    <string name="poore_vasakule_description">Võistluspaar pöörab 90° vasakule. Koer peab koerajuhile pöördel järgnema. Pööre tuleb sooritada sujuva, tiheda kaarena või paigal.</string>
+    <string name="umberpoore_paremale_description">Võistluspaar pöörab 180° ümber, paremale poole. Koer peab koerajuhile pöördel järgnema. Pööre tuleb sooritada sujuva, tiheda kaarena või paigal.</string>
+    <string name="umberpoore_vasakule_description">Võistluspaar pöörab 180° ümber, vasakule poole. Koer peab koerajuhile pöördel järgnema. Pööre tuleb sooritada sujuva, tiheda kaarena või paigal.</string>
+    <string name="paremale_270_description">Võistluspaar pöörab 270° paremale. Koer peab koerajuhile pöördel järgnema. Pööre tuleb sooritada sujuva, tiheda kaarena või paigal.</string>
+    <string name="vasakule_270_description">Võistluspaar pöörab 270° vasakule. Koer peab koerajuhile pöördel järgnema. Pööre tuleb sooritada sujuva, tiheda kaarena või paigal.</string>
+    <string name="paremale_360_description">Koer peab koerajuhile pöördel järgnema. Ring tuleb sooritada ümaralt, sujuvalt ja tihedalt või paigal.</string>
+    <string name="vasakule_360_description">Koer peab koerajuhile pöördel järgnema. Ring tuleb sooritada ümaralt, sujuvalt ja tihedalt või paigal.</string>
+    <string name="istu_ette_paremalt_korvale_edasi_description">Koerajuht peatub, koer juhitakse koerajuhi ette. Koer istub näoga koerajuhi poole. Kui koer on istunud, juhitakse ta koerajuhi vasakule käele kõrvalasendisse, pöörates paremalt poolt ümber koerajuhi. Võistluspaar jätkab liikumist, enne kui koer jõuab istuda.</string>
+    <string name="istu_ette_vasakult_korvale_edasi_description">Koerajuht peatub, koer juhitakse koerajuhi ette. Koer istub näoga koerajuhi poole. Kui koer on istunud, juhitakse ta koerajuhi vasakule käele kõrvalasendisse. Kui koer on jõudnud tagasi koerajuhi kõrvale, näoga liikumissuunas, jätkab võistluspaar liikumist, enne kui koer jõuab istuda.</string>
+    <string name="istu_ette_paremalt_korvale_istu_description">Koerajuht peatub, koer juhitakse koerajuhi ette. Koer istub näoga koerajuhi poole. Kui koer istub koerajuhi ees, juhitakse ta koerajuhi vasakule käele kõrvalasendisse istuma, pöörates paremalt poolt ümber koerajuhi. Seejärel jätkab võistluspaar liikumist.</string>
+    <string name="istu_ette_vasakult_korvale_istu_description">Koerajuht peatub, koer juhitakse koerajuhi ette. Koer istub näoga koerajuhi poole. Kui koer istub koerajuhi ees, juhitakse ta koerajuhi vasakule käele kõrvalasendisse istuma. Seejärel jätkab võistluspaar liikumist.</string>
+    <string name="aeglane_tempo_description">Võistluspaar kõnnib aeglaselt kuni tempomuutuse sildini või finišini.Nii koerajuhi kui koera tempomuutus peab olema märgatav.</string>
+    <string name="joostes_description">Võistluspaar liigub joostes kuni tempomuutuse sildini või finišini. Nii koerajuhi kui koera tempomuutus peab olema märgatav.</string>
+    <string name="normaaltempo_description">Võistluspaar jätkab liikumist normaaltempoga, kiirelt, kuid loomulikult.</string>
+    <string name="samm_paremale_description">Võte sooritatakse pärast silti. Otse liikudes astub võistluspaar diagonaalsammu paremale ette ja jätkab liikumist ilma peatumata, liikudes mööda uut paralleelset sirget.</string>
+    <string name="spiraal_paremale_description">Võistluspaar liigub paremal käel asuvatest koonustest mööda, tehes ringi kõigepealt ümber 3 koonuse, seejärel 2 ja lõpuks 1 koonuse. Silt paigutatakse esimese koonuse kõrvale või ette. Koonused seisavad reas ja nende vaheline kaugus on 1,8 – 2 meetrit.</string>
+    <string name="spiraal_vasakule_description">Võistluspaar liigub vasakul käel asuvatest koonustest mööda, tehes ringi kõigepealt ümber 3 koonuse, seejärel 2 ja lõpuks 1 koonuse. Silt paigutatakse esimese koonuse kõrvale või ette. Koonused seisavad reas ja nende vaheline kaugus on 1,8 – 2 meetrit.</string>
+    <string name="slaalom_description">Slaalomisse sisenetakse nii, et esimene koonus jääb võistluspaarist vasakule. Võistluspaar liigub koos koonuste vahelt läbi, nagu nooled näitavad. Silt paigutatakse esimesest koonusest paremale või selle ette. Reas on 4-5 koonust ja nende vaheline kaugus on 1,8 – 2 meetrit.</string>
+    <string name="topelt_slaalom_description">Slaalomisse sisenetakse nii, et esimene koonus jääb võistluspaarist vasakule. Võistluspaar liigub koos koonuste vahelt läbi, nagu nooled näitavad, ning liigub samamoodi teistpidi tagasi. Silt paigutatakse esimesest koonusest paremale või selle ette. Reas on 4-5 koonust ja nende vaheline kaugus on 1,8 – 2 meetrit</string>
+    <string name="istu_1_2_3_sammu_edasi_description">Koerajuht peatub. Koer istub koerajuhi kõrvale. Võistluspaar astub ühe sammu edasi, koerajuht peatub ja koer istub koerajuhi kõrvale. Võistluspaar astub kaks sammu edasi, koerajuht peatub ja koer istub koerajuhi kõrvale. Võistluspaar astub kolm sammu edasi, koerajuht peatub ja koer istub koerajuhi kõrvale. Võistluspaar jätkab liikumist otse edasi.</string>
+    <string name="istu_ette_1_2_3_sammu_tagasi_description">Koerajuht peatub ja koer juhitakse koerajuhi ette. Koer istub näoga koerajuhi poole. Kui koer istub, astub koerajuht ühe sammu tagasi, koer liigub kaasa ja istub koerajuhi ette, näoga koerajuhi poole. Kui koer istub, astub koerajuht kaks sammu tagasi, koer liigub kaasa ja istub koerajuhi ette, näoga koerajuhi poole. Kui koer istub, astub koerajuht kolm sammu tagasi, koer liigub kaasa ja istub koerajuhi ette, näoga koerajuhi poole. Seejärel valib koerajuht, kas koer tuleb algasendisse paremalt poolt ümber koerajuhi või otse vasakule. Kui koer on uuesti koerajuhi kõrval, näoga liikumissuunas, jätab võistluspaar liikumist, ilma et koer istuks.</string>
+    <string name="lama_description">Koerajuht peatub ja annab samal ajal koerale lama käskluse ilma, et koer eelnevalt istuks. Seejärel jätkab võistluspaar liikumist.</string>
+    <string name="istu_jookse_description">Võistluspaar peatub ja koer istub, seejärel liigub võistluspaar joostes kuni uue tempomuutuse sildini või finišini.</string>
+    <string name="umberpoord_koer_tagant_description">Koerajuht pöörab ümber suunaga koera poole, koer pöörab koerajuhi selja tagant. Pööre tuleb sooritada sujuva, tiheda kaarena või paigal. Võtte sooritavad koer ja koerajuht korraga.</string>
+    <string name="istu_ring_umber_koera_description">Koerajuht peatub ja koer istub koerajuhi kõrvale. Koerajuht liigub seejärel ringi ümber koera, alustades koera eest. Koerajuht peatub istuva koera kõrval, enne kui võistluspaar jätkab liikumist.</string>
+    <string name="istu_lama_ring_umber_koera_description">Koerajuht peatub ja koer istub koerajuhi kõrvale. Koerajuht paneb koera lamama. Koerajuht liigub seejärel ringi ümber koera, alustades koera eest. Koerajuht peatub lamava koera kõrval, enne kui võistluspaar jätkab liikumist.</string>
+    <string name="istu_seisa_descrription">Koerajuht peatub ja koer istub koerajuhi kõrvale. Koerajuht annab koerale käskluse „seisa“. Kui koer tõuseb seisma, jätkab võistluspaar liikumist.</string>
+
+    <array name="RK1_descriptions">
+        <item>@string/start_description</item>
+        <item>@string/finis_description</item>
+        <item>@string/istu_description</item>
+        <item>@string/istu_lama_description</item>
+        <item>@string/poore_paremale_description</item>
+        <item>@string/poore_vasakule_description</item>
+        <item>@string/umberpoore_paremale_description</item>
+        <item>@string/umberpoore_vasakule_description</item>
+        <item>@string/paremale_270_description</item>
+        <item>@string/vasakule_270_description</item>
+        <item>@string/paremale_360_description</item>
+        <item>@string/vasakule_360_description</item>
+        <item>@string/istu_ette_paremalt_korvale_edasi_description</item>
+        <item>@string/istu_ette_vasakult_korvale_edasi_description</item>
+        <item>@string/istu_ette_paremalt_korvale_istu_description</item>
+        <item>@string/istu_ette_vasakult_korvale_istu_description</item>
+        <item>@string/aeglane_tempo_description</item>
+        <item>@string/joostes_description</item>
+        <item>@string/normaaltempo_description</item>
+        <item>@string/samm_paremale_description</item>
+        <item>@string/spiraal_paremale_description</item>
+        <item>@string/spiraal_vasakule_description</item>
+        <item>@string/slaalom_description</item>
+        <item>@string/topelt_slaalom_description</item>
+        <item>@string/istu_1_2_3_sammu_edasi_description</item>
+        <item>@string/istu_ette_1_2_3_sammu_tagasi_description</item>
+        <item>@string/lama_description</item>
+        <item>@string/istu_jookse_description</item>
+        <item>@string/umberpoord_koer_tagant_description</item>
+        <item>@string/istu_ring_umber_koera_description</item>
+        <item>@string/istu_lama_ring_umber_koera_description</item>
+        <item>@string/istu_seisa_descrription</item>
+    </array>
+
+    //RK2
+    <string name="istu_umberpoord_paremale_edasi_description">Koerajuht peatub ja koer istub koerajuhi kõrvale.
+                                       Seejärel teeb võistluspaar ümberpöörde (180° kraadi)
+                                       paremale ja jätkab liikumist otse edasi. Koer peab
+                                       koerajuhile pöördel järgnema. Pööre tuleb sooritada
+                                       sujuva, tiheda kaarena või paigal</string>
+    <string name="istu_umberpoord_vasakule_edasi_description">Koerajuht peatub ja koer istub koerajuhi kõrvale.
+                                       Seejärel teeb võistluspaar ümberpöörde (180° kraadi)
+                                       vasakule ja jätkab liikumist otse edasi. Koer peab
+                                       koerajuhile pöördel järgnema. Pööre tuleb sooritada
+                                       sujuva, tiheda kaarena või paigal.</string>
+    <string name="saada_ule_tokke_description">Koer saadetakse üle tõkke mitte kaugemalt kui sildi
+                                       juurest, mis seisab (umbes 2 meetri kaugusel) tõkke
+                                       ees. Koerajuht liigub samal ajal tõkke kõrvalt otse
+                                       edasi raja kulgemise suunas. Pärast hüpet kutsutakse
+                                       koer koerajuhi kõrvale ja jätkatakse liikumist. Kogu
+                                       võte sooritatakse liikumise ajal.</string>
+    <string name="istu_jata_istuma_poora_paremae_1_samm_kutsu_juurde_istu_description">Koerajuht peatub ja koer istub koerajuhi kõrvale.
+                                       Koer jääb istuma, koerajuht pöörab paremale ja teeb
+                                       ühe sammu. Koer kutsutakse koerajuhi kõrvale
+                                       istuma, seejärel jätkatakse liikumist.</string>
+    <string name="istu_siesa_tee_ring_umber_koera_description">Koerajuht peatub ja koer istub koerajuhi kõrvale.
+                                       Koerale antakse käsklus „seisa“. Koerajuht teeb ringi
+                                       ümber koera, alustades koera eest. Koerajuht peatub
+                                       seisva koera kõrval, seejärel jätkatakse liikumist</string>
+    <string name="ahvatluste_kaheksa_description">Võistluspaar peab liikuma koos kaheksa-kujuliselt
+      ümber koonuste. Välja on pandud kaks ahvatlust, kas
+      maiuse või mänguasja kujul. Koonuste vaheline
+      kaugus peab olema 2,5–3 m ja ahvatluste vahel 1,5–
+      1,8 m.</string>
+    <string name="istu_samm_paremale_istu_description">Võte sooritatakse pärast silti.
+      Koerajuht peatub ja koer istub koerajuhi kõrvale.
+      Võistluspaar astub koos sammu otse paremale,
+      seejärel istub koer uuesti koerajuhi kõrvale.</string>
+    <string name="istu_istu_ette_paremalt_korvale_istu_description">Koerajuht peatub ja koer istub koerajuhi kõrvale. Koer
+      juhitakse koerajuhi ette näoga koerajuhi poole
+      istuma.
+      Kui koer istub, juhitakse ta koerajuhi vasakule käele
+      kõrvalasendisse istuma, pöörates paremalt ümber
+      koerajuhi. Seejärel jätkab võistluspaar liikumist.</string>
+    <string name="istu_istu_ette_vasakult_korvale_istu_description">Koerajuht peatub ja koer istub koerajuhi kõrvale. Koer
+      juhitakse koerajuhi ette näoga koerajuhi poole
+      istuma.
+      Kui koer istub, juhitakse ta koerajuhi vasakule käele
+      kõrvalasendisse istuma. Seejärel jätkab võistluspaar
+      liikumist.</string>
+    <string name="istu_lama_istu_description">Koerajuht peatub ja koer istub koerajuhi kõrvale.
+      Koerale antakse lama käsklus ja seejärel istu käsklus.
+      Võistluspaar jätkab liikumist.</string>
+    <string name="poore_paremale_istu_description">Võistluspaar pöörab 90° paremale, koerajuht peatub
+      kohe ja koer istub koerajuhi kõrvale. Koer peab
+      koerajuhile pöördel järgnema. Pöörde võib sooritada
+      pehme kaarena või järsu pöördena.</string>
+    <string name="poore_vasakule_istu_description">Võistluspaar pöörab 90° vasakule, koerajuht peatub
+      kohe ja koer istub koerajuhi kõrvale. Koer peab
+      koerajuhile pöördel järgnema. Pöörde võib sooritada
+      pehme kaarena või järsu pöördena.</string>
+    <string name="istu_poore_paremale_1_samm_istu_description">Koerajuht peatub ja koer istub koerajuhi kõrvale.
+      Võistluspaar pöörab 90° paremale ja teeb veel ühe
+      edasisammu. Seejärel jääb võistluspaar seisma ja koer
+      istun koerajuhi kõrvale.
+      Koer peab koerajuhile pöördel järgnema. Pöörde võib
+      sooritada pehme kaarena või järsu pöördena.</string>
+    <string name="istu_poore_vasakule_1_samm_istu_description">Koerajuht peatub ja koer istub koerajuhi kõrvale.
+      Võistluspaar pöörab 90° vasakule ja teeb veel ühe
+      edasisammu. Seejärel jääb
+      võistluspaar seisma ja koer istub koerajuhi kõrvale.
+      Koer peab koerajuhile pöördel järgnema. Pöörde võib
+      sooritada pehme kaarena või järsu pöördena.</string>
+    <string name="keerutus_liikumise_ajal_description">Koer peab võistluspaari liikumise ajal koerajuhi käsu
+      peale keerutama ühe tiiru ümber enda koerajuhist
+      eemale, tulema koerajuhi kõrvale tagasi ja
+      võistluspaar jätkab liikumist.</string>
+    <string name="samm_vasakue_description">Võte sooritatakse pärast silti.
+      Otse liikudes astub võistluspaar diagonaalsammu ette
+      vasakule ja jätkab liikumist ilma peatumata, liikudes
+      mööda uut paralleelset sirget.</string>
+    <string name="istu_jata_istuma_poora_vasakule_1_samm_kutsu_juurde_istu_description">Koerajuht peatub ja koer istub koerajuhi kõrvale.
+      Koer jääb istuma. Koerajuht pöörab vasakule ja astub
+      ühe sammu. Koer kutsutakse koerajuhi kõrvale
+      istuma, seejärel jätkatakse liikumist.</string>
+    <string name="istu_samm_vasakule_istu_description">Võte sooritatakse pärast silti.
+      Koerajuht peatub ja koer istub koerajuhi kõrvale.
+      Võistluspaar astub koos sammu otse vasakule,
+      seejärel istub koer uuesti koerajuhi kõrvale.</string>
+
+
+    <array name="RK2_descriptions">
+        <item>@string/istu_umberpoord_paremale_edasi_description</item>
+        <item>@string/istu_umberpoord_vasakule_edasi_description</item>
+        <item>@string/saada_ule_tokke_description</item>
+        <item>@string/istu_jata_istuma_poora_paremae_1_samm_kutsu_juurde_istu_description</item>
+        <item>@string/istu_siesa_tee_ring_umber_koera_description</item>
+        <item>@string/ahvatluste_kaheksa_description</item>
+        <item>@string/istu_samm_paremale_istu_description</item>
+        <item>@string/istu_istu_ette_paremalt_korvale_istu_description</item>
+        <item>@string/istu_istu_ette_vasakult_korvale_istu_description</item>
+        <item>@string/istu_lama_istu_description</item>
+        <item>@string/poore_paremale_istu_description</item>
+        <item>@string/poore_vasakule_istu_description</item>
+        <item>@string/istu_poore_paremale_1_samm_istu_description</item>
+        <item>@string/istu_poore_vasakule_1_samm_istu_description</item>
+        <item>@string/keerutus_liikumise_ajal_description</item>
+        <item>@string/samm_vasakue_description</item>
+        <item>@string/istu_jata_istuma_poora_vasakule_1_samm_kutsu_juurde_istu_description</item>
+        <item>@string/istu_samm_vasakule_istu_description</item>
+    </array>
+
+
+    //RK3
+    <string name="istu_poore_paremale_istu_description">Koerajuht peatub ja koer istub koerajuhi kõrvale.
+                                       Võistluspaar teeb kohapeal 90° parempöörde ja
+                                       peatub. Koer istub uuesti koerajuhi kõrvale. Koer
+                                       peab koerajuhile pöördel järgnema.</string>
+    <string name="istu_poore_vasakule_istu_description">Koerajuht peatub ja koer istub koerajuhi kõrvale.
+                                       Võistluspaar teeb kohapeal 90° vasakpöörde ja
+                                       peatub. Koer istub uuesti koerajuhi kõrvale. Koer
+                                       peab koerajuhile pöördel järgnema.</string>
+    <string name="istu_umberpoord_paremale_istu_description">Koerajuht peatub ja koer istub koerajuhi kõrvale.
+                                       Võistluspaar teeb kohapeal 180° pöörde paremale ja
+                                       peatub. Koer istub uuesti koerajuhi kõrvale. Koer peab
+                                       koerajuhile pöördel järgnema.</string>
+    <string name="istu_umberpoord_vasakule_istu_description">Koerajuht peatub ja koer istub koerajuhi kõrvale.
+                                       Võistluspaar teeb kohapeal 180° pöörde vasakule ja
+                                       peatub. Koer istub uuesti koerajuhi kõrvale. Koer peab
+                                       koerajuhile pöördel järgnema.</string>
+    <string name="istu_seisa_lama_description">Koerajuht peatub ja koer istub koerajuhi kõrvale.
+                                       Koerale antakse käsklus „seisa“ ja seejärel „lama“.
+                                       Koer jääb lamama, kuni võistluspaar jätkab liikumist.</string>
+    <string name="istu_seisa_istu_description">Koerajuht peatub ja koer istub koerajuhi kõrvale.
+      Koerale antakse seisa käsklus ja seejärel istu käsklus.
+      Koer jääb istuma, kuni võistluspaar jätkab liikumist.</string>
+    <string name="istu_eemaldu_kutsu_juurde_description">Võistluspaar peatub ja koer istub koerajuhi kõrvale.
+      Koer jääb istuma ja koerajuht liigub ise edasi
+      raja kulgemise suunas.
+      Kui koerajuht on eemaldunud 3–5 meetrit (vahemaa
+      tuleb tähistada), kutsutakse koer
+      koerajuhi kõrvale, jätkates liikumist. Kui koer jõuab
+      koerajuhi kõrvale, võistluspaar jätkab liikumist.</string>
+    <string name="liikumiselt_lama_ring_umber_description">Liikumise ajal antakse koerale lama käsklus. Koerajuht
+      teeb seejärel ringi ümber koera, alustades koera eest.
+      Koerajuht peatub koera kõrval, seejärel jätkatakse
+      koos liikumist. Koer peab jääma lamama, kuni
+      jätkatakse liikumist.</string>
+    <string name="kolm_sammu_tagasi_description">Liikumise ajal tagurdab võistluspaar kolm sammu, ilma
+      et koer läheks istuma. Seejärel jätkatakse koos
+      liikumist edasi.</string>
+    <string name="istu_saada_ule_tokke_description">Koerajuht peatub sildi juures, mis asub (umbes 2
+      meetri kaugusel) tõkke ees ja koer istub koerajuhi
+      kõrvale. Koerajuht saadab koera üle tõkke ja jätkab
+      liikumist tõkke kõrvalt raja kulgemise suunas. Pärast
+      hüpet kutsutakse koer koerajuhi kõrvale ja jätkatakse
+      koos liikumist.</string>
+    <string name="umberpoord_teineteise_poole_description">Liikumise ajal teeb võistluspaar ümberpöörde
+      teineteise poole, mis tähendab, et pärast pööret jääb
+      koer koerajuhi teisele käele.</string>
+    <string name="umberpoord_teineteisest_eemale_description">Liikumise ajal teeb võistluspaar ümberpöörde
+      teineteisest eemale, mis tähendab, et pärast pööret
+      jääb koer koerajuhi teisele käele.
+
+</string>
+    <string name="poole_vahetus_ees_description">Koer peab liikumise ajal koerajuhi käsu peale
+      koerajuhi eest poole vahetama, vabalt valitud viisil.</string>
+    <string name="pusivusvote_description">See võte sooritatakse rihmastatud koeraga. Koerajuht
+      liigub kohe pärast finišit rihmastatud koeraga
+      kohtuniku poolt määratud püsivusvõtte kohale.
+      Kohtunik otsustab, kas koer peab istuma või lamama ja
+      kas koerajuht peab seisma koera kõrval või ees.
+      Kõik võistluspaarid sooritavad püsivusvõtte
+      ühtemoodi. Sooritust jälgib abiline, hinnatakse 1,5
+      minuti jooksul, seejärel jääb võistluspaar vaikselt oma
+      kohale, kuni rada läbiv võistluspaar lõpetab.</string>
+
+    <array name="RK3_descriptions">
+        <item>@string/istu_poore_paremale_istu_description</item>
+        <item>@string/istu_poore_vasakule_istu_description</item>
+        <item>@string/istu_umberpoord_paremale_istu_description</item>
+        <item>@string/istu_umberpoord_vasakule_istu_description</item>
+        <item>@string/istu_seisa_lama_description</item>
+        <item>@string/istu_seisa_istu_description</item>
+        <item>@string/istu_eemaldu_kutsu_juurde_description</item>
+        <item>@string/liikumiselt_lama_ring_umber_description</item>
+        <item>@string/kolm_sammu_tagasi_description</item>
+        <item>@string/istu_saada_ule_tokke_description</item>
+        <item>@string/umberpoord_teineteise_poole_description</item>
+        <item>@string/umberpoord_teineteise_poole_description</item>
+        <item>@string/poole_vahetus_ees_description</item>
+        <item>@string/pusivusvote_description</item>
+    </array>
+
+    //RK4
+
+    <array name="RK4_descriptions">
+        <item></item>
+    </array>
+
+
+</resources>
