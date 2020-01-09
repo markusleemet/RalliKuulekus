@@ -11,7 +11,9 @@
         android:theme="@style/AppTheme">
         <activity android:name=".activities.SignSelectionActivity"></activity>
         <activity android:name=".activities.SignClassSelectionActivity" />
-        <activity android:name=".activities.MainActivity" />
+        <activity
+            android:name=".activities.MainActivity"
+            android:screenOrientation="landscape"/>
         <activity android:name=".activities.CreationDetailsActivity" />
         <activity android:name=".activities.OpeningActivity">
             <intent-filter>

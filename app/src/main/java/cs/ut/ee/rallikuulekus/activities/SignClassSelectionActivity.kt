@@ -25,6 +25,8 @@ class SignClassSelectionActivity : AppCompatActivity() {
         }
         val signSelectionIntent = Intent(this, SignSelectionActivity::class.java)
         signSelectionIntent.putExtra("class", rkClass)
+        signSelectionIntent.putExtra("x", intent.getFloatExtra("x", -1f))
+        signSelectionIntent.putExtra("y", intent.getFloatExtra("y", -1f))
         startActivity(signSelectionIntent)
     }
 }

@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import android.widget.ImageView
 import android.widget.TextView
 import cs.ut.ee.rallikuulekus.R
 import cs.ut.ee.rallikuulekus.adapters.SignAdapter
@@ -31,5 +32,9 @@ class SignSelectionActivity : AppCompatActivity() {
     private fun doSomethingWithTheSelectedSign(view: View){
         //example
         Log.i("doSomething","heading: ${view.findViewById<TextView>(R.id.text_view_sign_table_heading).text}")
+        Log.i("doSomething","description: ${view.findViewById<TextView>(R.id.text_view_sign_table_description).text}")
+        Log.i("doSomething","image_view: ${view.findViewById<ImageView>(R.id.image_view_sign_table_image)}")
+        Log.i("doSomething","x coordinate: ${intent.getFloatExtra("x", -1f)}")
+        Log.i("doSomething","y coordinate: ${intent.getFloatExtra("y", -1f)}")
     }
 }

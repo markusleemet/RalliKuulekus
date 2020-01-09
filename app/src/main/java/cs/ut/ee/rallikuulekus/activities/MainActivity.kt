@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Build
 import android.os.Bundle
 import android.util.DisplayMetrics
+import android.view.MotionEvent
 import android.view.View
 import android.view.ViewTreeObserver
 import androidx.appcompat.app.AppCompatActivity
@@ -28,16 +29,22 @@ class MainActivity : AppCompatActivity() {
                 constraint_layout_main.viewTreeObserver.removeOnGlobalLayoutListener(this)
             }
         })
-        constraint_layout_main.setOnClickListener {
-            openSignClassSelectionActivity(it)
+
+        constraint_layout_main.setOnTouchListener { v, event ->
+            when (event.action) {
+                MotionEvent.ACTION_DOWN -> {
+                    openSignClassSelectionActivity(event.x, event.y)
+                    true
+                }
+            }
+            false
         }
-
-
-
     }
 
-    fun openSignClassSelectionActivity(v: View){
+    fun openSignClassSelectionActivity(xCoordinate: Float, yCoordinate: Float){
         val signClassSelectionIntent = Intent(this, SignClassSelectionActivity::class.java)
+        signClassSelectionIntent.putExtra("x", xCoordinate)
+        signClassSelectionIntent.putExtra("y", yCoordinate)
         startActivity(signClassSelectionIntent)
     }
 
@@ -45,6 +52,4 @@ class MainActivity : AppCompatActivity() {
         super.onWindowFocusChanged(hasFocus)
         if (hasFocus) hideSystemUI(window)
     }
-
-
 }
