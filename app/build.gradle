@@ -35,4 +35,6 @@ dependencies {
 
     //material design
     implementation "com.google.android.material:material:$material_version"
+
+    implementation "androidx.core:core-ktx:$androidx_version"
 }
