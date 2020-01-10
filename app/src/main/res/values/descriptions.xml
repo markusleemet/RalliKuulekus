@@ -262,9 +262,97 @@
     </array>
 
     //RK4
+    <string name="istu_eemaldu_joostes_kutsu_juurde_jooksu_pealt_description">
+        Võistluspaar peatub ja koer istub koerajuhi kõrvale.
+       Koerajuht eemaldub joostes raja kulgemise suunas.
+       Kui koerajuht on eemaldunud 3–5 meetrit (vahemaa
+       tuleb tähistada), kutsutakse koer koerajuhi kõrvale,
+       jätkates liikumist joostes. Kui koer jõuab koerajuhi
+       kõrvale, liigutakse koos normaaltempos edasi.</string>
+    <string name="eseme_kandmine_description">
+        Võistluspaar peatub ja koer istub koerajuhi kõrvale.
+       Koerajuht võtab välja vabalt valitud eseme ja näitab
+       seda koerale käes hoides või sildi juurde maha pannes.
+       Koer peab innukalt eseme vastu/üles võtma ja seda
+       edasi liikudes umbes 2 meetrit kandma (vahemaa
+       tuleb tähistada). Seejärel võtab koerajuht liikumise
+       pealt eseme enda kätte, paneb taskusse ja
+       võistluspaar jätkab liikumist järgmise võtte juurde.</string>
+    <string name="istu_eemaldu_kutsu_juurde_ule_tokke_description">
+        Koerajuht peatub sildi juures, mis asub (umbes 2
+       meetri kaugusel) tõkke ees ja koer istub koerajuhi
+       kõrvale.
+       Koerajuht jätab koera istuma ja liigub tõkkest mööda,
+       misjärel koer kutsutakse üle tõkke koerajuhi kõrvale,
+       jätkates liikumist. Võistluspaar jätkab liikumist
+       järgmise võtte juurde.</string>
+    <string name="istu_seisa_eemaldu_kutsu_juurde_description">
+        Võistluspaar peatub ja koer istub koerajuhi kõrvale.
+       Koerajuht annab koerale seisa käskluse ja liigub ise
+       edasi raja kulgemise suunas. Kui koerajuht on
+       eemaldunud 3–5 meetrit (vahemaa tuleb tähistada),
+       kutsutakse koer koerajuhi kõrvale, jätkates liikumist.
+       Kui koer jõuab koerajuhi kõrvale, jätkab võistluspaar
+       liikumist.</string>
+    <string name="liikumiselt_seisa_ring_umber_koera_description">
+    Liikumise ajal antakse koerale seisa käsklus. Koerajuht
+    teeb seejärel ringi ümber koera, alustades koera eest.
+    Koerajuht peatub koera kõrval, seejärel jätkatakse
+    koos liikumist. Koer peab jääma seisma, kuni
+    jätkatakse liikumist.</string>
+    <string name="liikumiseltt_lama_kutsu_juurde_description">
+    Liikumise ajal antakse koerale lama käsklus ja
+    koerajuht jätkab liikumist raja kulgemise suunas. Kui
+    koerajuht on liikunud 3–5 meetrit (vahemaa tuleb
+    tähistada), kutsutakse koer koerajuhi kõrvale. Seejärel
+    jätkab võistluspaar koos liikumist.</string>
+    <string name="seisa_ette_tagurda_description">
+    Liikumise ajal juhitakse koer koerajuhi ette seisma,
+    näoga koerajuhi poole. Koer peab seejärel selgelt
+    tagurdama vähemalt ühe koerapikkuse võrra, enne kui
+    koerajuht annab käsu peatuda. Koerajuht ei tohi
+    paigalt liikuda. Koerajuht liigub seejärel koera ette,
+    juhib vabalt valitud viisil koera oma vasakule käele ja
+    jätkab liikumist raja kulgemise suunas.</string>
+    <string name="ettesaatmine_konuse_juurde_description">
+    Koerajuht peatub, saates samal ajal koera ette
+    koonuse juurde (umbes 2 meetri kaugusele raja
+    kulgemise suunas), kus koer peatub umbes 0,5 meetri
+    kaugusel koonusest. Koerajuht liigub seejärel koera
+    kõrvale, juhib vabalt valitud viisil koera oma kõrvale ja
+    jätkab liikumist.</string>
+    <string name="keerutus_liikumise_ajal_rk_4_description">
+    Koer peab võistluspaari liikumise ajal koerajuhi käsu
+    peale keerutama ühe tiiru ümber enda koerajuhi
+    suunas, tulema koerajuhi kõrvale tagasi ja võistluspaar
+    jätkab liikumist.</string>
+    <string name="poole_vahetus_taga_description">
+    Koer peab liikumise ajal koerajuhi käsu peale koerajuhi
+    tagant poole vahetama, vabalt valitud viisil.</string>
+    <string name="umberpoord_koos_paremale_description">
+    Liikumise ajal teeb võistluspaar ümberpöörde,
+    pöörates mõlemad korraga paremale, mis tähendab,
+    et pärast pööret jääb koer koerajuhi teisele käele.</string>
+    <string name="umberpoord_koos_vasakule_description">
+    Liikumise ajal teeb võistluspaar ümberpöörde,
+    pöörates mõlemad korraga vasakule, mis tähendab, et
+    pärast pööret jääb koer koerajuhi teisele käele.</string>
+
 
     <array name="RK4_descriptions">
-        <item></item>
+        <item>@string/istu_eemaldu_joostes_kutsu_juurde_jooksu_pealt_description</item>
+        <item>@string/eseme_kandmine_description</item>
+        <item>@string/istu_eemaldu_kutsu_juurde_ule_tokke_description</item>
+        <item>@string/istu_seisa_eemaldu_kutsu_juurde_description</item>
+        <item>@string/liikumiselt_seisa_ring_umber_koera_description</item>
+        <item>@string/liikumiseltt_lama_kutsu_juurde_description</item>
+        <item>@string/seisa_ette_tagurda_description</item>
+        <item>@string/ettesaatmine_konuse_juurde_description</item>
+        <item>@string/keerutus_liikumise_ajal_rk_4_description</item>
+        <item>@string/poole_vahetus_taga_description</item>
+        <item>@string/umberpoord_koos_paremale_description</item>
+        <item>@string/umberpoord_koos_vasakule_description</item>
+        <item>@string/pusivusvote_description</item>
     </array>
 
 

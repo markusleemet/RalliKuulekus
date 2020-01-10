@@ -148,8 +148,32 @@
     </array>
 
     //RK4
+    <string name="istu_eemaldu_joostes_kutsu_juurde_jooksu_pealt">Istu, eemaldu joostes, kutsu juurde jooksu pealt</string>
+    <string name="eseme_kandmine">Eseme kandmine</string>
+    <string name="istu_eemaldu_kutsu_juurde_ule_tokke">Istu, eemaldu, kutsu juurde üle tõkke</string>
+    <string name="istu_seisa_eemaldu_kutsu_juurde">Istu, seisa, eemaldu, kutsu juurde</string>
+    <string name="liikumiselt_seisa_ring_umber_koera">Liikumiselt seisa, ring ümber koera</string>
+    <string name="liikumiseltt_lama_kutsu_juurde">Liikumiselt lama, kutsu juurde</string>
+    <string name="seisa_ette_tagurda">Seisa ette, tagurda</string>
+    <string name="ettesaatmine_konuse_juurde">Ettesaatmine koonuse juurde</string>
+    <string name="keerutus_liikumise_ajal_rk_4">Keerutus liikumise ajal</string>
+    <string name="poole_vahetus_taga">Poolevahetus taga</string>
+    <string name="umberpoord_koos_paremale">Ümberpöörd koos paremale</string>
+    <string name="umberpoord_koos_vasakule">Ümberpöörd koos vasakule</string>
 
     <array name="RK4_headings">
-        <item></item>
+        <item>@string/istu_eemaldu_joostes_kutsu_juurde_jooksu_pealt</item>
+        <item>@string/eseme_kandmine</item>
+        <item>@string/istu_eemaldu_kutsu_juurde_ule_tokke</item>
+        <item>@string/istu_seisa_eemaldu_kutsu_juurde</item>
+        <item>@string/liikumiselt_seisa_ring_umber_koera</item>
+        <item>@string/liikumiseltt_lama_kutsu_juurde</item>
+        <item>@string/seisa_ette_tagurda</item>
+        <item>@string/ettesaatmine_konuse_juurde</item>
+        <item>@string/keerutus_liikumise_ajal_rk_4</item>
+        <item>@string/poole_vahetus_taga</item>
+        <item>@string/umberpoord_koos_paremale</item>
+        <item>@string/umberpoord_koos_vasakule</item>
+        <item>@string/pusivusvote</item>
     </array>
 </resources>

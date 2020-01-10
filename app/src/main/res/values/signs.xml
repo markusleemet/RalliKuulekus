@@ -82,6 +82,18 @@
 
     //RK4
     <array name="RK4_signs">
-        <item></item>
+        <item>@drawable/ic_istu_eemaldu_joostes_kutsu_juurde_jooksu_pealt</item>
+        <item>@drawable/ic_eseme_kandmine</item>
+        <item>@drawable/ic_istu_eemaldu_kutsu_juurde_ule_tokke</item>
+        <item>@drawable/ic_istu_seisa_eemaldu_kutsu_juurde</item>
+        <item>@drawable/ic_liikumiselt_seisa_ring_umber_koera</item>
+        <item>@drawable/ic_liikumiselt_lama_kutsu_juurde</item>
+        <item>@drawable/ic_seisa_ette_tagurda</item>
+        <item>@drawable/ic__editablekoonuse_juurde_edastamine</item>
+        <item>@drawable/ic_tiir_liikumise_ajal_rk4</item>
+        <item>@drawable/ic_poole_vahetus_taga</item>
+        <item>@drawable/ic_umberpoord_koos_paremale</item>
+        <item>@drawable/ic_umberpoord_koos_vasakule</item>
+        <item>@drawable/ic_pusivusvote</item>
     </array>
 </resources>
