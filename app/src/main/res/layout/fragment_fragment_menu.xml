@@ -5,9 +5,7 @@
     android:id="@+id/constraint_layout_menu"
     android:layout_width="wrap_content"
     android:layout_height="match_parent"
-    android:background="#FF0000"
-    android:backgroundTint="#00FF0000"
-    android:elevation="1dp"
+    android:background="#FFFFFF"
     tools:context=".fragments.FragmentMenu">
 
     <com.google.android.material.button.MaterialButton
