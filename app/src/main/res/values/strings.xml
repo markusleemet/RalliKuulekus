@@ -10,4 +10,9 @@
     <string name="rk3">rk3</string>
     <string name="rk4">rk4</string>
     <string name="sign">sign</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="salvesta">Salvesta</string>
+    <string name="salvesta_ja_ekspordi">Salvesta ja ekspordi</string>
 </resources>
