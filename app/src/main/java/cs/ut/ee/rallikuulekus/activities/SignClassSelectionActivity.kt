@@ -1,13 +1,15 @@
 package cs.ut.ee.rallikuulekus.activities
 
+import android.app.Activity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import cs.ut.ee.rallikuulekus.R
-import cs.ut.ee.rallikuulekus.functions.hideSystemUI
 
 class SignClassSelectionActivity : AppCompatActivity() {
+    private val NEW_SIGN_SELECTION_CONSTANT = 12345
+    private val EXISTING_SIGN_CHANGING_CONSTANT = 12346
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,8 +27,32 @@ class SignClassSelectionActivity : AppCompatActivity() {
         }
         val signSelectionIntent = Intent(this, SignSelectionActivity::class.java)
         signSelectionIntent.putExtra("class", rkClass)
-        signSelectionIntent.putExtra("x", intent.getFloatExtra("x", -1f))
-        signSelectionIntent.putExtra("y", intent.getFloatExtra("y", -1f))
-        startActivity(signSelectionIntent)
+        if (intent.hasExtra("x") && intent.hasExtra("y")) {
+            startActivityForResult(signSelectionIntent, NEW_SIGN_SELECTION_CONSTANT)
+        }else{
+            startActivityForResult(signSelectionIntent, EXISTING_SIGN_CHANGING_CONSTANT)
+        }
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if (requestCode == NEW_SIGN_SELECTION_CONSTANT && resultCode == Activity.RESULT_OK) {
+            val resultIntent = Intent()
+            resultIntent.putExtra("class", data!!.getIntExtra("class", -1))
+            resultIntent.putExtra("position", data.getIntExtra("position", -1))
+            resultIntent.putExtra("x", intent.getFloatExtra("x", -1f))
+            resultIntent.putExtra("y", intent.getFloatExtra("y", -1f))
+            setResult(Activity.RESULT_OK, resultIntent)
+            finish()
+        }
+
+        if (requestCode == EXISTING_SIGN_CHANGING_CONSTANT && resultCode == Activity.RESULT_OK) {
+            val resultIntent = Intent()
+            resultIntent.putExtra("class", data!!.getIntExtra("class", -1))
+            resultIntent.putExtra("position", data.getIntExtra("position", -1))
+            resultIntent.putExtra("index", intent!!.getIntExtra("index", -1))
+            setResult(Activity.RESULT_OK, resultIntent)
+            finish()
+        }
     }
 }

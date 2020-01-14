@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="grid_line_width">3dp</dimen>
+    <dimen name="grid_line_width">1dp</dimen>
     <dimen name="grid_space">63dp</dimen>
+    <dimen name="signOnTheSchemaHeight">127dp</dimen>
+    <dimen name="signNumberTextSize">30px</dimen>
+    <dimen name="signOnTheSchemaWidth">180dp</dimen>
+    <dimen name="imageViewMargin">2dp</dimen>
 </resources>
