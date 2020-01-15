@@ -12,14 +12,15 @@ import android.view.MotionEvent
 import android.view.View
 import android.view.ViewTreeObserver
 import android.widget.ImageView
-import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.view.children
 import androidx.core.view.isVisible
 import androidx.lifecycle.ViewModelProviders
 import cs.ut.ee.rallikuulekus.R
 import cs.ut.ee.rallikuulekus.entities.SignOnTheSchema
+import cs.ut.ee.rallikuulekus.entities.SignRotation
 import cs.ut.ee.rallikuulekus.fragments.FragmentEdit
 import cs.ut.ee.rallikuulekus.fragments.FragmentMenu
 import cs.ut.ee.rallikuulekus.functions.CapturePhotoUtils
@@ -47,6 +48,7 @@ class MainActivity : AppCompatActivity(), FragmentMenu.OnFragmentInteractionList
             ViewTreeObserver.OnGlobalLayoutListener {
             override fun onGlobalLayout() {
                 val grid = Grid(this@MainActivity, constraint_layout_main.width, constraint_layout_main.height)
+                grid.id = View.generateViewId()
                 constraint_layout_main.addView(grid)
                 constraint_layout_main.viewTreeObserver.removeOnGlobalLayoutListener(this)
             }
@@ -90,7 +92,7 @@ class MainActivity : AppCompatActivity(), FragmentMenu.OnFragmentInteractionList
         startActivityForResult(signClassSelectionIntent, CHANGE_SIGN_CONSTANT)
     }
 
-    private fun openMenuFragment(v: View){
+    fun openMenuFragment(v: View){
         val nameValue = intent.getStringExtra("name")!!
         val descriptionValue = intent.getStringExtra("description")!!
         val menuFragment = FragmentMenu.newInstance(nameValue, descriptionValue)
@@ -132,20 +134,62 @@ class MainActivity : AppCompatActivity(), FragmentMenu.OnFragmentInteractionList
     }
 
     override fun deleteSign(signIndex: Int) {
-        supportFragmentManager.popBackStack()
-        constraint_layout_main.removeView(constraint_layout_main.findViewWithTag<LinearLayout>(signIndex))
+        supportFragmentManager.popBackStackImmediate()
+        constraint_layout_main.removeView(constraint_layout_main.findViewWithTag<ImageView>(signIndex))
+        constraint_layout_main.removeView(constraint_layout_main.findViewWithTag<TextView>("textView $signIndex"))
         model.signs.removeAt(signIndex)
         refreshIndexes(signIndex)
     }
 
+    override fun rotateDegrees(degree: Int, signIndex: Int) {
+        val imageView = constraint_layout_main.findViewWithTag<ImageView>(signIndex)
+        val textView = constraint_layout_main.findViewWithTag<TextView>("textView $signIndex")
+        val signOnTheSchema = model.signs[signIndex]
+        val signRotation = signOnTheSchema.rotation
+
+        if (signRotation == SignRotation.LEFT || signRotation == SignRotation.RIGHT) {
+            textView.x = textView.x - resources.getDimensionPixelSize(R.dimen.rotationElevation)
+            textView.y = textView.y - resources.getDimensionPixelSize(R.dimen.rotationElevation)
+        }else{
+            textView.x = textView.x + resources.getDimensionPixelSize(R.dimen.rotationElevation)
+            textView.y = textView.y + resources.getDimensionPixelSize(R.dimen.rotationElevation)
+        }
+        imageView.rotateToHeading(signOnTheSchema.rotation)
+    }
+
+    fun ImageView.rotateToHeading(signRotation: SignRotation){
+        when (signRotation) {
+            SignRotation.TOP -> {
+                this.rotation = 0f
+            }
+            SignRotation.BOTTOM -> {
+                this.rotation = 180f
+            }
+            SignRotation.LEFT -> {
+                this.rotation = 270f
+            }
+            SignRotation.RIGHT -> {
+                this.rotation = 90f
+            }
+        }
+    }
+
     private fun refreshIndexes(removedSignIndex: Int){
         for (view in constraint_layout_main.children) {
-            if (view is LinearLayout) {
+            if (view is ImageView) {
                 val oldIndex = view.tag as Int
                 if (oldIndex > removedSignIndex) {
                     val newIndex = oldIndex - 1
                     view.tag = newIndex
-                    view.findViewWithTag<TextView>("linearLayoutTextView").text = (newIndex + 1).toString()
+                }
+            }
+            if (view is TextView && view.tag != null) {
+                Log.i("rotation", "textView: $view")
+                val oldIndex = (view.tag as String).split(" ")[1].toInt()
+                if (oldIndex > removedSignIndex) {
+                    val newIndex = oldIndex - 1
+                    view.tag = "textView $newIndex"
+                    view.text = (newIndex + 1).toString()
                 }
             }
         }
@@ -175,7 +219,6 @@ class MainActivity : AppCompatActivity(), FragmentMenu.OnFragmentInteractionList
             val position = data.getIntExtra("position", -1)
             val sign = generateSignList(rkClass, this)[position]
             val signOnTheSchema = SignOnTheSchema(xCoordinate, yCoordinate, rkClass, sign.drawable, sign.heading, sign.description)
-            Log.i("viewModel", "signOnTheSchema: ${signOnTheSchema}")
             model.addSignToSigns(signOnTheSchema)
             createViewGroupForSign(signOnTheSchema)
         }
@@ -183,9 +226,8 @@ class MainActivity : AppCompatActivity(), FragmentMenu.OnFragmentInteractionList
             val signIndex = data!!.getIntExtra("index", -1)
             val rkClass = data.getIntExtra("class", -1)
             val position = data.getIntExtra("position", -1)
-            val linearLayout = constraint_layout_main.findViewWithTag<LinearLayout>(signIndex)
             val sign = generateSignList(rkClass, this)[position]
-            linearLayout.findViewWithTag<ImageView>("linearLayoutImageView").setImageDrawable(sign.drawable)
+            constraint_layout_main.findViewWithTag<ImageView>(signIndex).setImageDrawable(sign.drawable)
             model.signs[signIndex].drawable = sign.drawable
             model.signs[signIndex].heading = sign.heading
             model.signs[signIndex].description = sign.description
@@ -193,15 +235,29 @@ class MainActivity : AppCompatActivity(), FragmentMenu.OnFragmentInteractionList
     }
 
     private fun createViewGroupForSign(signOnTheSchema: SignOnTheSchema){
-        val signIndexOnTheScreen = model.signs.indexOf(signOnTheSchema) + 1
-        val linearLayout = LinearLayout(this)
-        val linearLayoutLayoutParams = LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT)
-        linearLayout.layoutParams = linearLayoutLayoutParams
-        linearLayout.orientation = LinearLayout.HORIZONTAL
-        linearLayout.x = signOnTheSchema.xCoordinate
-        linearLayout.y = signOnTheSchema.yCoordinate
-        linearLayout.tag = model.signs.indexOf(signOnTheSchema)
-        linearLayout.setOnTouchListener(object : View.OnTouchListener {
+        val signIndex = model.signs.indexOf(signOnTheSchema)
+
+        val imageView = ImageView(this)
+        imageView.tag = signIndex
+        imageView.id = View.generateViewId()
+        imageView.x = signOnTheSchema.xCoordinate - (resources.getDimensionPixelSize(R.dimen.signOnTheSchemaWidth) / 2).toFloat()
+        imageView.y = signOnTheSchema.yCoordinate - (resources.getDimensionPixelSize(R.dimen.signOnTheSchemaHeight) / 2).toFloat()
+        imageView.setImageDrawable(signOnTheSchema.drawable)
+        val imageViewParams = ConstraintLayout.LayoutParams(resources.getDimensionPixelSize(R.dimen.signOnTheSchemaWidth).toInt(), resources.getDimensionPixelSize(R.dimen.signOnTheSchemaHeight).toInt())
+        imageView.layoutParams = imageViewParams
+
+
+        val textView = TextView(this)
+        textView.tag = "textView $signIndex"
+        textView.id = View.generateViewId()
+        textView.x = imageView.x + resources.getDimensionPixelSize(R.dimen.signOnTheSchemaWidth) + 5
+        textView.y = imageView.y
+        textView.text = (signIndex + 1).toString()
+        textView.textSize = resources.getDimension(R.dimen.signNumberTextSize)
+        textView.setTextColor(Color.BLACK)
+
+
+        imageView.setOnTouchListener(object : View.OnTouchListener {
             var lastX = 0f
             var lastY = 0f
             var drag = false
@@ -211,8 +267,10 @@ class MainActivity : AppCompatActivity(), FragmentMenu.OnFragmentInteractionList
                         val xDelta = lastX - event!!.rawX
                         val yDelta = lastY - event!!.rawY
                         if (yDelta.absoluteValue > 1 || xDelta > 1) {
-                            linearLayout.x = linearLayout.x - xDelta
-                            linearLayout.y = linearLayout.y - yDelta
+                            imageView.x = imageView.x - xDelta
+                            imageView.y = imageView.y - yDelta
+                            textView.x = textView.x - xDelta
+                            textView.y = textView.y - yDelta
                             lastX = event!!.rawX
                             lastY = event!!.rawY
                             drag = true
@@ -222,36 +280,22 @@ class MainActivity : AppCompatActivity(), FragmentMenu.OnFragmentInteractionList
                         lastX = event!!.rawX
                         lastY = event!!.rawY
                         drag = false
-                        Log.i("viewModel", "signOnTheSchema: ${model.signs[v!!.tag as Int]}")
                     }
                     MotionEvent.ACTION_UP -> {
                         if (drag == false) {
-                            openEditFragment(linearLayout.tag as Int)
+                            openEditFragment(v!!.tag as Int)
                         }else{
-                            model.signs[linearLayout.tag as Int].xCoordinate = event.rawX
-                            model.signs[linearLayout.tag as Int].yCoordinate = event.rawY
+                            model.signs[v!!.tag as Int].xCoordinate = event.rawX
+                            model.signs[v!!.tag as Int].yCoordinate = event.rawY
                         }
                     }
                 }
                 return true
             }
         })
-        constraint_layout_main.addView(linearLayout)
 
-        val imageView = ImageView(this)
-        imageView.tag = "linearLayoutImageView"
-        imageView.setImageDrawable(signOnTheSchema.drawable)
-        val imageViewParams = LinearLayout.LayoutParams(resources.getDimensionPixelSize(R.dimen.signOnTheSchemaWidth).toInt(), resources.getDimensionPixelSize(R.dimen.signOnTheSchemaHeight).toInt())
-        imageViewParams.setMargins(0, 0, resources.getDimensionPixelSize(R.dimen.imageViewMargin), 0)
-        imageView.layoutParams = imageViewParams
-        linearLayout.addView(imageView)
 
-        val textView = TextView(this)
-        textView.tag = "linearLayoutTextView"
-        textView.text = signIndexOnTheScreen.toString()
-        textView.textSize = resources.getDimension(R.dimen.signNumberTextSize)
-        textView.setTextColor(Color.BLACK)
-        linearLayout.addView(textView)
+        constraint_layout_main.addView(textView)
+        constraint_layout_main.addView(imageView)
     }
-
 }

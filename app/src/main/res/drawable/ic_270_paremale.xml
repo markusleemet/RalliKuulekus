@@ -4,6 +4,7 @@
     android:height="210dp"
     android:viewportWidth="297"
     android:viewportHeight="210">
+  <group>
   <path
       android:pathData="M0,0h297v210h-297z"
       android:strokeAlpha="1"
@@ -101,4 +102,5 @@
       android:strokeColor="#000000"
       android:fillAlpha="1"
       android:strokeLineCap="butt"/>
+  </group>
 </vector>
