@@ -17,4 +17,8 @@
     <string name="salvesta_ja_ekspordi">Salvesta ja ekspordi</string>
     <string name="muuda">Muuda</string>
     <string name="kustuta">Kustuta</string>
+    <string name="background">background</string>
+    <string name="loo_uus_joonis">Loo uus joonis</string>
+    <string name="menü">menu</string>
+    <string name="menu">menüü</string>
 </resources>

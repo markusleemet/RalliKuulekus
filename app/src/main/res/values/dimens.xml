@@ -7,4 +7,9 @@
     <dimen name="signOnTheSchemaWidth">180dp</dimen>
     <dimen name="imageViewMargin">2dp</dimen>
     <dimen name="rotationElevation">26.5dp</dimen>
+    <dimen name="button_height">100dp</dimen>
+    <dimen name="button_width">250dp</dimen>
+    <dimen name="borderStroke">1dp</dimen>
+    <dimen name="borderRadius">2dp</dimen>
+    <dimen name="buttonTextSize">18sp</dimen>
 </resources>

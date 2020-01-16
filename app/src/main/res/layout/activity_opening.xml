@@ -6,30 +6,53 @@
     android:layout_height="match_parent"
     tools:context=".activities.OpeningActivity">
 
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/button_new_schema"
-        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="openCreationActivity"
-        android:text="@string/uus_joonis"
-        app:layout_constraintBottom_toTopOf="@+id/button_load_schema"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_chainStyle="packed" />
-
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/button_load_schema"
-        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/lae_joonis"
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:scaleType="centerCrop"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button_new_schema" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/opening_activity_background" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button_new_schema"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        android:layout_width="@dimen/button_width"
+        android:layout_height="@dimen/button_height"
+        android:layout_marginTop="100dp"
+        android:onClick="openCreationActivity"
+        android:text="@string/uus_joonis"
+        android:textSize="18sp"
+        app:backgroundTint="#1AFFFFFF"
+        app:cornerRadius="2dp"
+        app:layout_constraintEnd_toStartOf="@+id/guideline"
+        app:layout_constraintTop_toTopOf="parent"
+        app:strokeColor="#00FF3B"
+        app:strokeWidth="1dp" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button_load_schema"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        android:layout_width="@dimen/button_width"
+        android:layout_height="@dimen/button_height"
+        android:layout_marginTop="32dp"
+        android:text="@string/lae_joonis"
+        android:textSize="18sp"
+        app:backgroundTint="#1AFFFFFF"
+        app:cornerRadius="2dp"
+        app:layout_constraintEnd_toStartOf="@+id/guideline"
+        app:layout_constraintTop_toBottomOf="@+id/button_new_schema"
+        app:strokeColor="#00FF3B" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="300dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

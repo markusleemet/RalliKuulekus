@@ -58,10 +58,7 @@ class MainActivity : AppCompatActivity(), FragmentMenu.OnFragmentInteractionList
             when (event.action) {
                 MotionEvent.ACTION_DOWN -> {
                     if (supportFragmentManager.backStackEntryCount > 0) {
-                        while (supportFragmentManager.backStackEntryCount != 0) {
-                            Log.i("viewModel", "entry count: ${supportFragmentManager.backStackEntryCount}")
-                            supportFragmentManager.popBackStackImmediate()
-                        }
+                        closeAllFragments()
                     } else {
                         openSignClassSelectionActivityToAddNewSign(event.x, event.y)
                     }
@@ -93,6 +90,7 @@ class MainActivity : AppCompatActivity(), FragmentMenu.OnFragmentInteractionList
     }
 
     fun openMenuFragment(v: View){
+        closeAllFragments()
         val nameValue = intent.getStringExtra("name")!!
         val descriptionValue = intent.getStringExtra("description")!!
         val menuFragment = FragmentMenu.newInstance(nameValue, descriptionValue)
@@ -104,6 +102,7 @@ class MainActivity : AppCompatActivity(), FragmentMenu.OnFragmentInteractionList
     }
 
     private fun openEditFragment(index: Int){
+        closeAllFragments()
         val fragmentEdit = FragmentEdit.newInstance(index)
         val supportFragmentManager = supportFragmentManager
         val transaction = supportFragmentManager.beginTransaction()
@@ -297,5 +296,11 @@ class MainActivity : AppCompatActivity(), FragmentMenu.OnFragmentInteractionList
 
         constraint_layout_main.addView(textView)
         constraint_layout_main.addView(imageView)
+    }
+
+    private fun closeAllFragments() {
+        while (supportFragmentManager.backStackEntryCount != 0) {
+            supportFragmentManager.popBackStackImmediate()
+        }
     }
 }
