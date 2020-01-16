@@ -22,5 +22,6 @@ class CreationDetailsActivity : AppCompatActivity() {
         mainActivityIntent.putExtra("name", nameValue)
         mainActivityIntent.putExtra("description", descriptionValue)
         startActivity(mainActivityIntent)
+        finish()
     }
 }

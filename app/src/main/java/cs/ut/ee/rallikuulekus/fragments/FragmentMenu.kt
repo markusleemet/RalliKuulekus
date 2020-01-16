@@ -44,9 +44,14 @@ class FragmentMenu : Fragment() {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_fragment_menu, container, false)
         val saveAndExportButton = view.findViewById<MaterialButton>(R.id.button_save_and_export)
+        val goBackToMainMenuButton = view.findViewById<MaterialButton>(R.id.button_go_to_main_menu)
         saveAndExportButton.setOnClickListener {
             closeFragmentAndCallListener(it)
         }
+        goBackToMainMenuButton.setOnClickListener {
+            goBackToMainMenu()
+        }
+
         return view
     }
 
@@ -108,5 +113,9 @@ class FragmentMenu : Fragment() {
 
     private fun closeFragmentAndCallListener(v: View){
         listener?.saveAndExportBitmap(Uri.EMPTY)
+    }
+
+    private fun goBackToMainMenu(){
+        activity!!.finish()
     }
 }

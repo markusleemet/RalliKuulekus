@@ -21,4 +21,6 @@
     <string name="loo_uus_joonis">Loo uus joonis</string>
     <string name="menü">menu</string>
     <string name="menu">menüü</string>
+    <string name="mainMenu">Peamenüü</string>
+    <string name="exit">Välju</string>
 </resources>

@@ -40,6 +40,7 @@
         android:layout_width="@dimen/button_width"
         android:layout_height="@dimen/button_height"
         android:layout_marginTop="32dp"
+        android:onClick="openLoadActivity"
         android:text="@string/lae_joonis"
         android:textSize="18sp"
         app:backgroundTint="#1AFFFFFF"

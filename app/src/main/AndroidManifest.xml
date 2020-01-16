@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="cs.ut.ee.rallikuulekus">
 
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"></uses-permission>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -11,14 +11,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activities.SignSelectionActivity"></activity>
+        <activity android:name=".activities.LoadActivity"></activity>
+        <activity android:name=".activities.SignSelectionActivity" />
         <activity android:name=".activities.SignClassSelectionActivity" />
         <activity
             android:name=".activities.MainActivity"
-            android:screenOrientation="landscape"/>
+            android:screenOrientation="landscape" />
         <activity
             android:name=".activities.CreationDetailsActivity"
-            android:screenOrientation="landscape"/>
+            android:screenOrientation="landscape" />
         <activity
             android:name=".activities.OpeningActivity"
             android:screenOrientation="landscape">
@@ -29,4 +30,5 @@
             </intent-filter>
         </activity>
     </application>
+
 </manifest>

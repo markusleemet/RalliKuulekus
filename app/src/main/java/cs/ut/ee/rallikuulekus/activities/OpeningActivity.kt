@@ -22,4 +22,9 @@ class OpeningActivity : AppCompatActivity() {
         startActivity(creationDetailsActivityIntent)
     }
 
+    fun openLoadActivity(v: View) {
+        val loadActivityIntent = Intent(this, LoadActivity::class.java)
+        startActivity(loadActivityIntent)
+    }
+
 }
