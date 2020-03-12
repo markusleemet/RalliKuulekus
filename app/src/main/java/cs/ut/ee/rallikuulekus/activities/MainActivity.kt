@@ -1,20 +1,27 @@
 package cs.ut.ee.rallikuulekus.activities
 
+import android.Manifest
 import android.app.Activity
 import android.content.Intent
+import android.content.pm.PackageManager
 import android.graphics.Bitmap
 import android.graphics.Canvas
 import android.graphics.Color
-import android.net.Uri
 import android.os.Bundle
+import android.os.Environment
+import android.provider.MediaStore
 import android.util.Log
+import android.view.Gravity
 import android.view.MotionEvent
 import android.view.View
 import android.view.ViewTreeObserver
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.core.app.ActivityCompat
+import androidx.core.content.ContextCompat
 import androidx.core.view.children
 import androidx.core.view.isVisible
 import androidx.lifecycle.ViewModelProviders
@@ -23,12 +30,16 @@ import cs.ut.ee.rallikuulekus.entities.SignOnTheSchema
 import cs.ut.ee.rallikuulekus.entities.SignRotation
 import cs.ut.ee.rallikuulekus.fragments.FragmentEdit
 import cs.ut.ee.rallikuulekus.fragments.FragmentMenu
-import cs.ut.ee.rallikuulekus.functions.CapturePhotoUtils
 import cs.ut.ee.rallikuulekus.functions.generateSignList
 import cs.ut.ee.rallikuulekus.functions.hideSystemUI
 import cs.ut.ee.rallikuulekus.viewModels.SignsViewModel
 import cs.ut.ee.rallikuulekus.views.Grid
 import kotlinx.android.synthetic.main.activity_main.*
+import java.io.File
+import java.io.FileNotFoundException
+import java.io.FileOutputStream
+import java.io.IOException
+import kotlin.concurrent.thread
 import kotlin.math.absoluteValue
 
 
@@ -36,12 +47,23 @@ class MainActivity : AppCompatActivity(), FragmentMenu.OnFragmentInteractionList
     private lateinit var model: SignsViewModel
     private val SIGN_CLASS_SELECTION_CONSTANT = 1234
     private val CHANGE_SIGN_CONSTANT = 1235
+    private val neededPermissions = arrayOf(Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.WRITE_EXTERNAL_STORAGE)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         hideSystemUI(window)
         setContentView(R.layout.activity_main)
         model = ViewModelProviders.of(this)[SignsViewModel::class.java]
+
+        //permission
+        if (ContextCompat.checkSelfPermission(
+                this,
+                android.Manifest.permission.WRITE_EXTERNAL_STORAGE
+            )
+            != PackageManager.PERMISSION_GRANTED
+        ) {
+            ActivityCompat.requestPermissions(this, neededPermissions, 123)
+        }
 
         //Add grid as background if constraint layout has size
         constraint_layout_main.viewTreeObserver.addOnGlobalLayoutListener(object :
@@ -50,6 +72,26 @@ class MainActivity : AppCompatActivity(), FragmentMenu.OnFragmentInteractionList
                 val grid = Grid(this@MainActivity, constraint_layout_main.width, constraint_layout_main.height)
                 grid.id = View.generateViewId()
                 constraint_layout_main.addView(grid)
+
+                //Further actions depend on open mode
+                if (intent!!.hasExtra("name")) {
+                    thread {
+                        model.initNewSchema(intent.getStringExtra("name")!!, intent.getStringExtra("description")!!)
+                    }
+                }else{
+                    val id = intent.getIntExtra("id",-1)
+                    model.initExistingSchema(id)
+                    thread {
+                        val signsForTheSchema = model.getSignsToPutOnScreen(id)
+                        signsForTheSchema.forEach {
+                            runOnUiThread {
+                                putSignOnTheSchema(it)
+                            }
+                        }
+                    }
+
+                }
+
                 constraint_layout_main.viewTreeObserver.removeOnGlobalLayoutListener(this)
             }
         })
@@ -60,21 +102,27 @@ class MainActivity : AppCompatActivity(), FragmentMenu.OnFragmentInteractionList
                     if (supportFragmentManager.backStackEntryCount > 0) {
                         closeAllFragments()
                     } else {
-                        openSignClassSelectionActivityToAddNewSign(event.x, event.y)
+                        val xCoordinate = event.rawX - resources.getDimensionPixelSize(R.dimen.signOnTheSchemaWidth) / 2
+                        val yCoordinate = event.rawY - resources.getDimensionPixelSize(R.dimen.signOnTheSchemaHeight) / 2
+                        openSignClassSelectionActivityToAddNewSign(xCoordinate, yCoordinate)
                     }
                 }
             }
             true
         }
 
-        fragment_container_menu.setOnTouchListener { v, event ->
+        fragment_container_menu.setOnTouchListener { _, _ ->
             true
         }
 
-        fragment_container_edit.setOnTouchListener { v, event ->
+        fragment_container_edit.setOnTouchListener { _, _ ->
             true
         }
+
+
     }
+
+
 
     fun openSignClassSelectionActivityToAddNewSign(xCoordinate: Float, yCoordinate: Float){
         val signClassSelectionIntent = Intent(this, SignClassSelectionActivity::class.java)
@@ -91,10 +139,7 @@ class MainActivity : AppCompatActivity(), FragmentMenu.OnFragmentInteractionList
 
     fun openMenuFragment(v: View){
         closeAllFragments()
-        val nameValue = intent.getStringExtra("name")!!
-        val descriptionValue = intent.getStringExtra("description")!!
-        val menuFragment = FragmentMenu.newInstance(nameValue, descriptionValue)
-        val supportFragmentManager = supportFragmentManager
+        val menuFragment = FragmentMenu()
         val fragmentTransaction = supportFragmentManager.beginTransaction()
         fragmentTransaction.add(R.id.fragment_container_menu, menuFragment)
         fragmentTransaction.addToBackStack("menu")
@@ -104,7 +149,6 @@ class MainActivity : AppCompatActivity(), FragmentMenu.OnFragmentInteractionList
     private fun openEditFragment(index: Int){
         closeAllFragments()
         val fragmentEdit = FragmentEdit.newInstance(index)
-        val supportFragmentManager = supportFragmentManager
         val transaction = supportFragmentManager.beginTransaction()
         transaction.add(R.id.fragment_container_edit, fragmentEdit)
         transaction.addToBackStack("edit")
@@ -116,15 +160,66 @@ class MainActivity : AppCompatActivity(), FragmentMenu.OnFragmentInteractionList
         if (hasFocus) hideSystemUI(window)
     }
 
-    override fun saveAndExportBitmap(uri: Uri) {
-        supportFragmentManager.popBackStackImmediate()
+    override fun saveAndExportBitmap() {
+        saveSchema()
+        closeAllFragments()
         button_menu.isVisible = false
         val bitmapToSave = createBitmap()
         button_menu.isVisible = true
-        val contentResolver = this.contentResolver
-        CapturePhotoUtils.insertImage(contentResolver, bitmapToSave,
-            intent.getStringExtra("name"),
-            intent.getStringExtra("description"))
+
+        val result = MediaStore.Images.Media.insertImage(getContentResolver(), bitmapToSave, model.name , model.description)
+        Log.i("eksport", "result: $result")
+        /**
+        try{
+            val file = File(MediaStore.Images.Media.EXTERNAL_CONTENT_URI)
+            Log.i("eksport", "path: ${file.path}")
+
+            if (file.mkdirs()) {
+                val outFile = File(file, "${model.name}.JPEG")
+                Log.i("eksport", outFile.toString())
+                FileOutputStream(outFile, false).use {
+                    bitmapToSave.compress(Bitmap.CompressFormat.JPEG, 100, it)
+                }
+            }else{
+                Log.i("eksport", "mkdirs returned false")
+            }
+        } catch (e: FileNotFoundException) {
+            //TOAST to show user information
+            val toast = Toast.makeText(
+                this,
+                "Midagi läks valesti, pilti ei eksporditud!",
+                Toast.LENGTH_LONG
+            )
+            toast.setGravity(Gravity.TOP, 0, 0)
+            toast.show()
+            return
+        } catch (e: IOException) {
+            //TOAST to show user information
+            val toast = Toast.makeText(
+                this,
+                "Midagi läks valesti, pilti ei eksporditud!",
+                Toast.LENGTH_LONG
+            )
+            toast.setGravity(Gravity.TOP, 0, 0)
+            toast.show()
+            return
+        }
+
+        //TOAST to show user information
+        val toast = Toast.makeText(this, "Joonis edukalt eksporditud!", Toast.LENGTH_LONG)
+        toast.setGravity(Gravity.TOP, 0, 0)
+        toast.show()**/
+    }
+
+    override fun saveSchema() {
+        closeAllFragments()
+        thread {
+            model.saveNewSchemaToDatabase()
+        }
+        //TOAST to show user information
+        val toast = Toast.makeText(this, "Joonis edukalt salvestatud!", Toast.LENGTH_LONG)
+        toast.setGravity(Gravity.TOP, 0, 0)
+        toast.show()
     }
 
     override fun changeSign(signIndex: Int) {
@@ -217,9 +312,9 @@ class MainActivity : AppCompatActivity(), FragmentMenu.OnFragmentInteractionList
             val rkClass = data.getIntExtra("class", -1)
             val position = data.getIntExtra("position", -1)
             val sign = generateSignList(rkClass, this)[position]
-            val signOnTheSchema = SignOnTheSchema(xCoordinate, yCoordinate, rkClass, sign.drawable, sign.heading, sign.description)
+            val signOnTheSchema = SignOnTheSchema(xCoordinate, yCoordinate, rkClass, sign.drawable, sign.heading, sign.description, position, SignRotation.TOP)
             model.addSignToSigns(signOnTheSchema)
-            createViewGroupForSign(signOnTheSchema)
+            putSignOnTheSchema(signOnTheSchema)
         }
         if (requestCode == CHANGE_SIGN_CONSTANT && resultCode == Activity.RESULT_OK) {
             val signIndex = data!!.getIntExtra("index", -1)
@@ -233,23 +328,24 @@ class MainActivity : AppCompatActivity(), FragmentMenu.OnFragmentInteractionList
         }
     }
 
-    private fun createViewGroupForSign(signOnTheSchema: SignOnTheSchema){
+    private fun putSignOnTheSchema(signOnTheSchema: SignOnTheSchema){
         val signIndex = model.signs.indexOf(signOnTheSchema)
 
         val imageView = ImageView(this)
         imageView.tag = signIndex
         imageView.id = View.generateViewId()
-        imageView.x = signOnTheSchema.xCoordinate - (resources.getDimensionPixelSize(R.dimen.signOnTheSchemaWidth) / 2).toFloat()
-        imageView.y = signOnTheSchema.yCoordinate - (resources.getDimensionPixelSize(R.dimen.signOnTheSchemaHeight) / 2).toFloat()
+        imageView.x = signOnTheSchema.xCoordinate
+        imageView.y = signOnTheSchema.yCoordinate
         imageView.setImageDrawable(signOnTheSchema.drawable)
-        val imageViewParams = ConstraintLayout.LayoutParams(resources.getDimensionPixelSize(R.dimen.signOnTheSchemaWidth).toInt(), resources.getDimensionPixelSize(R.dimen.signOnTheSchemaHeight).toInt())
+        imageView.rotateToHeading(signOnTheSchema.rotation)
+        val imageViewParams = ConstraintLayout.LayoutParams(resources.getDimensionPixelSize(R.dimen.signOnTheSchemaWidth), resources.getDimensionPixelSize(R.dimen.signOnTheSchemaHeight))
         imageView.layoutParams = imageViewParams
 
 
         val textView = TextView(this)
         textView.tag = "textView $signIndex"
         textView.id = View.generateViewId()
-        textView.x = imageView.x + resources.getDimensionPixelSize(R.dimen.signOnTheSchemaWidth) + 5
+        textView.x = imageView.x + resources.getDimensionPixelSize(R.dimen.signOnTheSchemaWidth) + 10
         textView.y = imageView.y
         textView.text = (signIndex + 1).toString()
         textView.textSize = resources.getDimension(R.dimen.signNumberTextSize)
@@ -265,7 +361,7 @@ class MainActivity : AppCompatActivity(), FragmentMenu.OnFragmentInteractionList
                     MotionEvent.ACTION_MOVE -> {
                         val xDelta = lastX - event!!.rawX
                         val yDelta = lastY - event!!.rawY
-                        if (yDelta.absoluteValue > 1 || xDelta > 1) {
+                        if (yDelta.absoluteValue > 3 || xDelta > 3) {
                             imageView.x = imageView.x - xDelta
                             imageView.y = imageView.y - yDelta
                             textView.x = textView.x - xDelta
@@ -284,8 +380,8 @@ class MainActivity : AppCompatActivity(), FragmentMenu.OnFragmentInteractionList
                         if (drag == false) {
                             openEditFragment(v!!.tag as Int)
                         }else{
-                            model.signs[v!!.tag as Int].xCoordinate = event.rawX
-                            model.signs[v!!.tag as Int].yCoordinate = event.rawY
+                            model.signs[v!!.tag as Int].xCoordinate = v.x
+                            model.signs[v!!.tag as Int].yCoordinate = v.y
                         }
                     }
                 }

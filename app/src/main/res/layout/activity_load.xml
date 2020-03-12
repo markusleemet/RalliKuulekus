@@ -43,9 +43,9 @@
             tools:layout_editor_absoluteY="688dp">
 
             <ListView
-                android:id="@+id/list_view_signs"
-                android:layout_width="566dp"
-                android:layout_height="926dp"
+                android:id="@+id/list_view_load_signs"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"

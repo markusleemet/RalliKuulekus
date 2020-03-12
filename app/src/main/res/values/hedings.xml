@@ -34,6 +34,8 @@
     <string name="istu_ring_umber_koera">Istu, ring ümber koera</string>
     <string name="istu_lama_ring_umber_koera">Istu, lama, ring ümber koera</string>
     <string name="istu_seisa">Istu, seisa</string>
+    <string name="seisa_istu_lama_1_2_3_sammu_edasi">Seisa, istu, lama, 1, 2, 3 sammu edasi</string>
+    <string name="ring_umber_koerajuhi">Ring ümber koerajuhi päripäeva</string>
 
     <array name="RK1_hedings">
         <item>@string/start</item>
@@ -68,6 +70,8 @@
         <item>@string/istu_ring_umber_koera</item>
         <item>@string/istu_lama_ring_umber_koera</item>
         <item>@string/istu_seisa</item>
+        <item>@string/seisa_istu_lama_1_2_3_sammu_edasi</item>
+        <item>@string/ring_umber_koerajuhi</item>
 
     </array>
 
@@ -128,6 +132,10 @@
     <string name="umberpoord_teineteisest_eemale">Ümberpöörd teineteisest eemale</string>
     <string name="poole_vahetus_ees">Poole vahetus ees</string>
     <string name="pusivusvote">Püsivusvõte</string>
+    <string name="_2x_umberpoord_koer_tagant">2x ümberpöörd, koer tagant</string>
+    <string name="poolevahetus_jalgade_vahelt">Poolevahetus jalgade vahelt</string>
+    <string name="istu_poolevahetus_tagant_istu">Istu, poolevahetus tagant, istu</string>
+    <string name="ring_umber_koerajuhi_vastupaeva">Ring ümber koerajuhi vastupäeva</string>
 
 
     <array name="RK3_headings">
@@ -145,6 +153,10 @@
         <item>@string/umberpoord_teineteisest_eemale</item>
         <item>@string/poole_vahetus_ees</item>
         <item>@string/pusivusvote</item>
+        <item>@string/_2x_umberpoord_koer_tagant</item>
+        <item>@string/poolevahetus_jalgade_vahelt</item>
+        <item>@string/istu_poolevahetus_tagant_istu</item>
+        <item>@string/ring_umber_koerajuhi_vastupaeva</item>
     </array>
 
     //RK4

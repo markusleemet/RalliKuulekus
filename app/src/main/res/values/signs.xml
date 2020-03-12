@@ -35,6 +35,8 @@
         <item>@drawable/ic_istu_ring_umber_koera</item>
         <item>@drawable/ic_istu_lama_ring_umber_koera</item>
         <item>@drawable/ic_istu_seisa</item>
+        <item>@drawable/ic_seisa_istu_lama_1_2_3_sammu_edasi</item>
+        <item>@drawable/ic_ring_umber_koerajuhi</item>
 
 
 
@@ -78,6 +80,10 @@
         <item>@drawable/ic_umberpoord_teineteisest_eemale</item>
         <item>@drawable/ic_poole_vahetus_ees</item>
         <item>@drawable/ic_pusivusvote</item>
+        <item>@drawable/ic_2x_umberpoord_koer_tagant</item>
+        <item>@drawable/ic_poolevahtus_jalgade_vahelt</item>
+        <item>@drawable/ic_istu_poolte_vahetus_tagant_istu</item>
+        <item>@drawable/ic_ring_umber_koerajuhi_vastupaeva</item>
     </array>
 
     //RK4

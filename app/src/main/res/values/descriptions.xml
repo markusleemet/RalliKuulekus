@@ -35,6 +35,8 @@
     <string name="istu_ring_umber_koera_description">Koerajuht peatub ja koer istub koerajuhi kõrvale. Koerajuht liigub seejärel ringi ümber koera, alustades koera eest. Koerajuht peatub istuva koera kõrval, enne kui võistluspaar jätkab liikumist.</string>
     <string name="istu_lama_ring_umber_koera_description">Koerajuht peatub ja koer istub koerajuhi kõrvale. Koerajuht paneb koera lamama. Koerajuht liigub seejärel ringi ümber koera, alustades koera eest. Koerajuht peatub lamava koera kõrval, enne kui võistluspaar jätkab liikumist.</string>
     <string name="istu_seisa_descrription">Koerajuht peatub ja koer istub koerajuhi kõrvale. Koerajuht annab koerale käskluse „seisa“. Kui koer tõuseb seisma, jätkab võistluspaar liikumist.</string>
+    <string name="seisa_istu_lama_1_2_3_sammu_edasi_description">Koerajuht peatub. Koer istub koerajuhi kõrvale. Võistluspaar astub ühe sammu edasi, koerajuht peatub ja koer seisab koerajuhi kõrvale. Võistluspaar astub kaks sammu edasi, koerajuht peatub ja koer istub koerajuhi kõrvale. Võistluspaar astub kolm sammu edasi, koerajuht peatub ja koer lamab koerajuhi kõrvale. Võistluspaar jätkab liikumist otse edasi.</string>
+    <string name="ring_umber_koerajuhi_description">Koerajuhi peatudes juhitakse koer keerama ümber koerajuhi päripäeva. Koer ei tohi soorituse ajal peatuda. Soorituse lõppedes jätkab koer liikumist koerajuhi vasakul küljel.</string>
 
     <array name="RK1_descriptions">
         <item>@string/start_description</item>
@@ -69,6 +71,8 @@
         <item>@string/istu_ring_umber_koera_description</item>
         <item>@string/istu_lama_ring_umber_koera_description</item>
         <item>@string/istu_seisa_descrription</item>
+        <item>@string/seisa_istu_lama_1_2_3_sammu_edasi</item>
+        <item>@string/ring_umber_koerajuhi_description</item>
     </array>
 
     //RK2
@@ -243,6 +247,10 @@
       ühtemoodi. Sooritust jälgib abiline, hinnatakse 1,5
       minuti jooksul, seejärel jääb võistluspaar vaikselt oma
       kohale, kuni rada läbiv võistluspaar lõpetab.</string>
+    <string name="_2x_umberpoord_koer_tagant_description">Koerajuht pöörab ümber suunaga koera poole, koer pöörab koerajuhi selja tagant, pööre tehakse selliselt 2 korda järjest. Pööre tuleb sooritada sujuva, tiheda kaarena või paigal, Võtte (pöörde) sooritavad koer ja koerajuht korraga kahel järjestikul korral, Koerajuht ei tohi pöörete vahel teha rohkem kui kaks sammu.</string>
+    <string name="poolevahetus_jalgade_vahelt_description">Koer vahetab poolt koerajuhi jalgade vahelt, koer jätkab liikumist koerajuhi teisel küljel, Koer ei tohi kogu soorituse ajal peatuda.</string>
+    <string name="istu_poolevahetus_tagant_istu_description">Koerajuht peatub ja koer istub koerajuhi kõrvale. Koer juhitakse koerajuhi selja tagant poolt vahetama ja koer istub koerajuhi kõrvale. Võistluspaar jätkab liikumist </string>
+    <string name="ring_umber_koerajuhi_vastupaeva_description">Koerajuhi peatudes juhitakse koer keerama ümber koerajuhi vastupäeva, Koer ei tohi soorituse ajal peatuda. Soorituse lõppedes jätkab koer liikumist koerajuhi paremal küljel.</string>
 
     <array name="RK3_descriptions">
         <item>@string/istu_poore_paremale_istu_description</item>
@@ -259,6 +267,11 @@
         <item>@string/umberpoord_teineteise_poole_description</item>
         <item>@string/poole_vahetus_ees_description</item>
         <item>@string/pusivusvote_description</item>
+        <item>@string/_2x_umberpoord_koer_tagant_description</item>
+        <item>@string/poolevahetus_jalgade_vahelt_description</item>
+        <item>@string/istu_poolevahetus_tagant_istu_description</item>
+        <item>@string/ring_umber_koerajuhi_vastupaeva_description</item>
+
     </array>
 
     //RK4
