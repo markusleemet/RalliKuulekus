@@ -23,7 +23,7 @@ class LoadActivity : AppCompatActivity() {
         db = Room.databaseBuilder(
             application,
             SchemaDataBase::class.java, "schema-db"
-        ).build()
+        ).fallbackToDestructiveMigration().build()
 
         thread {
             val schemas = db.DbSchemaDAO().getAllSchemas().reversed()
