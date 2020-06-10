@@ -373,7 +373,7 @@ class MainActivity : AppCompatActivity(), FragmentMenu.OnFragmentInteractionList
 
     private fun refreshIndexes(removedSignIndex: Int){
         for (view in constraint_layout_main.children) {
-            if (view is ImageView) {
+            if (view is ImageView && view.tag is Int) {
                 val oldIndex = view.tag as Int
                 if (oldIndex > removedSignIndex) {
                     val newIndex = oldIndex - 1
