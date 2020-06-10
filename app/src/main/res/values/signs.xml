@@ -3,8 +3,6 @@
 
     //RK1
     <array name="RK1_signs">
-        <item>@drawable/ic_start</item>
-        <item>@drawable/ic_finis</item>
         <item>@drawable/ic_istu</item>
         <item>@drawable/ic_istu_lama</item>
         <item>@drawable/ic_poore_paremale</item>

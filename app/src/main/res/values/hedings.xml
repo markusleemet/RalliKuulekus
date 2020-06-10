@@ -38,8 +38,6 @@
     <string name="ring_umber_koerajuhi">Ring ümber koerajuhi päripäeva</string>
 
     <array name="RK1_hedings">
-        <item>@string/start</item>
-        <item>@string/finis</item>
         <item>@string/istu</item>
         <item>@string/istu_lama</item>
         <item>@string/poore_paremale</item>

@@ -39,8 +39,6 @@
     <string name="ring_umber_koerajuhi_description">Koerajuhi peatudes juhitakse koer keerama ümber koerajuhi päripäeva. Koer ei tohi soorituse ajal peatuda. Soorituse lõppedes jätkab koer liikumist koerajuhi vasakul küljel.</string>
 
     <array name="RK1_descriptions">
-        <item>@string/start_description</item>
-        <item>@string/finis_description</item>
         <item>@string/istu_description</item>
         <item>@string/istu_lama_description</item>
         <item>@string/poore_paremale_description</item>
