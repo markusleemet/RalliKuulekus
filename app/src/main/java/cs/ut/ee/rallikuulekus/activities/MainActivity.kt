@@ -78,6 +78,8 @@ class MainActivity : AppCompatActivity(), FragmentMenu.OnFragmentInteractionList
                     thread {
                         model.initNewSchema(intent.getStringExtra("name")!!, intent.getStringExtra("description")!!)
                     }
+                    //Initialize start and finish signs
+                    initStartAndFinishSigns(true)
                 }else{
                     val id = intent.getIntExtra("id",-1)
                     model.initExistingSchema(id)
@@ -89,6 +91,8 @@ class MainActivity : AppCompatActivity(), FragmentMenu.OnFragmentInteractionList
                             }
                         }
                     }
+                    //Initialize start and finish signs
+                    initStartAndFinishSigns(false)
 
                 }
 
@@ -123,6 +127,104 @@ class MainActivity : AppCompatActivity(), FragmentMenu.OnFragmentInteractionList
     }
 
 
+    fun initStartAndFinishSigns(newSchema: Boolean){
+        Log.i("rallikuulekusLog", "Function initStartAndFinishSigns")
+
+        //Init start sign
+        val startImageView = ImageView(this)
+        startImageView.tag = "start"
+        startImageView.id = View.generateViewId()
+        startImageView.setImageDrawable(resources.getDrawable(R.drawable.ic_start, null))
+        startImageView.rotateToHeading(SignRotation.TOP)
+        val imageViewParams = ConstraintLayout.LayoutParams(resources.getDimensionPixelSize(R.dimen.signOnTheSchemaWidth), resources.getDimensionPixelSize(R.dimen.signOnTheSchemaHeight))
+        startImageView.layoutParams = imageViewParams
+
+        //Init finish sign
+        val finishImageView = ImageView(this)
+        finishImageView.tag = "finish"
+        finishImageView.id = View.generateViewId()
+        finishImageView.setImageDrawable(resources.getDrawable(R.drawable.ic_finis, null))
+        finishImageView.rotateToHeading(SignRotation.TOP)
+        finishImageView.layoutParams = imageViewParams
+
+
+
+        if (newSchema) {
+            Log.i("rallikuulekusLog", "Function initStartAndFinishSigns: new schema -> $newSchema")
+            val startXCoordinate: Float = (constraint_layout_main.width - resources.getDimensionPixelSize(R.dimen.signOnTheSchemaWidth) + 100) / 2f
+            val startYCoordinate = (constraint_layout_main.height - resources.getDimensionPixelSize(R.dimen.signOnTheSchemaHeight) + 100) / 2f
+            val finishXCoordinate = (constraint_layout_main.width - resources.getDimensionPixelSize(R.dimen.signOnTheSchemaWidth)) / 2f
+            val finishYCoordinate = (constraint_layout_main.height - resources.getDimensionPixelSize(R.dimen.signOnTheSchemaHeight)) / 2f
+
+            startImageView.x = startXCoordinate
+            startImageView.y = startYCoordinate
+            finishImageView.x = finishXCoordinate
+            finishImageView.y = finishYCoordinate
+
+        }else{
+            Log.i("rallikuulekusLog", "Function initStartAndFinishSigns: new schema -> $newSchema")
+        }
+
+        startImageView.setOnTouchListener(object : View.OnTouchListener {
+            var lastX = 0f
+            var lastY = 0f
+            override fun onTouch(v: View?, event: MotionEvent?): Boolean {
+                when (event!!.action) {
+                    MotionEvent.ACTION_MOVE -> {
+                        val xDelta = lastX - event!!.rawX
+                        val yDelta = lastY - event!!.rawY
+                        if (yDelta.absoluteValue > 3 || xDelta > 3) {
+                            startImageView.x = startImageView.x - xDelta
+                            startImageView.y = startImageView.y - yDelta
+                            lastX = event!!.rawX
+                            lastY = event!!.rawY
+                        }
+                    }
+                    MotionEvent.ACTION_DOWN -> {
+                        lastX = event!!.rawX
+                        lastY = event!!.rawY
+                    }
+                    MotionEvent.ACTION_UP -> {
+                        model.startXCoordinate = v!!.x
+                        model.startYCoordinate= v.y
+                    }
+                }
+                return true
+            }
+        })
+
+        finishImageView.setOnTouchListener(object : View.OnTouchListener {
+            var lastX = 0f
+            var lastY = 0f
+            override fun onTouch(v: View?, event: MotionEvent?): Boolean {
+                when (event!!.action) {
+                    MotionEvent.ACTION_MOVE -> {
+                        val xDelta = lastX - event!!.rawX
+                        val yDelta = lastY - event!!.rawY
+                        if (yDelta.absoluteValue > 3 || xDelta > 3) {
+                            finishImageView.x = finishImageView.x - xDelta
+                            finishImageView.y = finishImageView.y - yDelta
+                            lastX = event!!.rawX
+                            lastY = event!!.rawY
+                        }
+                    }
+                    MotionEvent.ACTION_DOWN -> {
+                        lastX = event!!.rawX
+                        lastY = event!!.rawY
+                    }
+                    MotionEvent.ACTION_UP -> {
+                        model.finishXCoordinate = v!!.x
+                        model.finishYCoordinate= v.y
+                    }
+                }
+                return true
+            }
+        })
+
+        // Add created signs to constraint layout
+        constraint_layout_main.addView(finishImageView)
+        constraint_layout_main.addView(startImageView)
+    }
 
     fun openSignClassSelectionActivityToAddNewSign(xCoordinate: Float, yCoordinate: Float){
         val signClassSelectionIntent = Intent(this, SignClassSelectionActivity::class.java)

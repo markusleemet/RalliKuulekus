@@ -13,6 +13,7 @@ import cs.ut.ee.rallikuulekus.functions.generateSignList
 import java.text.SimpleDateFormat
 import java.util.*
 import kotlin.collections.ArrayList
+import kotlin.collections.HashMap
 import kotlin.concurrent.thread
 
 class SignsViewModel(application: Application) : AndroidViewModel(application) {
@@ -22,6 +23,10 @@ class SignsViewModel(application: Application) : AndroidViewModel(application) {
     var description: String = ""
     var schemaDate: String = ""
     lateinit var db: SchemaDataBase
+    var startXCoordinate = 0f
+    var startYCoordinate = 0f
+    var finishXCoordinate = 0f
+    var finishYCoordinate = 0f
 
 
     init {
