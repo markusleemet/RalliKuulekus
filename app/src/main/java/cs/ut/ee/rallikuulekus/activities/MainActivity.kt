@@ -131,7 +131,6 @@ class MainActivity : AppCompatActivity(), FragmentMenu.OnFragmentInteractionList
         startImageView.tag = "start"
         startImageView.id = View.generateViewId()
         startImageView.setImageDrawable(resources.getDrawable(R.drawable.ic_start, null))
-        startImageView.rotateToHeading(SignRotation.TOP)
         val imageViewParams = ConstraintLayout.LayoutParams(resources.getDimensionPixelSize(R.dimen.signOnTheSchemaWidth), resources.getDimensionPixelSize(R.dimen.signOnTheSchemaHeight))
         startImageView.layoutParams = imageViewParams
 
@@ -140,7 +139,6 @@ class MainActivity : AppCompatActivity(), FragmentMenu.OnFragmentInteractionList
         finishImageView.tag = "finish"
         finishImageView.id = View.generateViewId()
         finishImageView.setImageDrawable(resources.getDrawable(R.drawable.ic_finis, null))
-        finishImageView.rotateToHeading(SignRotation.TOP)
         finishImageView.layoutParams = imageViewParams
 
 
@@ -355,6 +353,9 @@ class MainActivity : AppCompatActivity(), FragmentMenu.OnFragmentInteractionList
     }
 
     fun ImageView.rotateToHeading(signRotation: SignRotation){
+        val imageView = this
+        Log.i("rallikuulekusLog", "ImageView to rotate id -> ${imageView.tag}")
+
         when (signRotation) {
             SignRotation.TOP -> {
                 this.rotation = 0f
@@ -433,6 +434,7 @@ class MainActivity : AppCompatActivity(), FragmentMenu.OnFragmentInteractionList
 
     private fun putSignOnTheSchema(signOnTheSchema: SignOnTheSchema){
         val signIndex = model.signs.indexOf(signOnTheSchema)
+        Log.i("rallikuulekusLog", "Function putSignOnTheSchema: id -> $signIndex")
 
         val imageView = ImageView(this)
         imageView.tag = signIndex
@@ -448,12 +450,18 @@ class MainActivity : AppCompatActivity(), FragmentMenu.OnFragmentInteractionList
         val textView = TextView(this)
         textView.tag = "textView $signIndex"
         textView.id = View.generateViewId()
-        textView.x = imageView.x + resources.getDimensionPixelSize(R.dimen.signOnTheSchemaWidth) + 10
-        textView.y = imageView.y
+
+        if (signOnTheSchema.rotation == SignRotation.LEFT || signOnTheSchema.rotation == SignRotation.RIGHT) {
+            textView.x = imageView.x + resources.getDimensionPixelSize(R.dimen.signOnTheSchemaWidth) + 10 - resources.getDimensionPixelSize(R.dimen.rotationElevation)
+            textView.y = imageView.y - resources.getDimensionPixelSize(R.dimen.rotationElevation)
+        }else{
+            textView.x = imageView.x + resources.getDimensionPixelSize(R.dimen.signOnTheSchemaWidth) + 10
+            textView.y = imageView.y
+        }
+
         textView.text = (signIndex + 1).toString()
         textView.textSize = resources.getDimension(R.dimen.signNumberTextSize)
         textView.setTextColor(Color.BLACK)
-
 
         imageView.setOnTouchListener(object : View.OnTouchListener {
             var lastX = 0f
@@ -495,6 +503,7 @@ class MainActivity : AppCompatActivity(), FragmentMenu.OnFragmentInteractionList
 
         constraint_layout_main.addView(textView)
         constraint_layout_main.addView(imageView)
+
     }
 
     private fun closeAllFragments() {
