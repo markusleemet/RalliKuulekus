@@ -74,16 +74,12 @@ class MainActivity : AppCompatActivity(), FragmentMenu.OnFragmentInteractionList
                 constraint_layout_main.addView(grid)
 
                 //Further actions depend on open mode
-                if (intent!!.hasExtra("name")) {
-                    thread {
+                thread {
+                    if (intent!!.hasExtra("name")){
                         model.initNewSchema(intent.getStringExtra("name")!!, intent.getStringExtra("description")!!)
-                    }
-                    //Initialize start and finish signs
-                    initStartAndFinishSigns(true)
-                }else{
-                    val id = intent.getIntExtra("id",-1)
-                    model.initExistingSchema(id)
-                    thread {
+                    }else{
+                        val id = intent.getIntExtra("id",-1)
+                        model.initExistingSchema(id)
                         val signsForTheSchema = model.getSignsToPutOnScreen(id)
                         signsForTheSchema.forEach {
                             runOnUiThread {
@@ -91,9 +87,9 @@ class MainActivity : AppCompatActivity(), FragmentMenu.OnFragmentInteractionList
                             }
                         }
                     }
-                    //Initialize start and finish signs
-                    initStartAndFinishSigns(false)
-
+                    runOnUiThread {
+                        initStartAndFinishSigns(false)
+                    }
                 }
 
                 constraint_layout_main.viewTreeObserver.removeOnGlobalLayoutListener(this)
@@ -163,6 +159,11 @@ class MainActivity : AppCompatActivity(), FragmentMenu.OnFragmentInteractionList
 
         }else{
             Log.i("rallikuulekusLog", "Function initStartAndFinishSigns: new schema -> $newSchema")
+
+            startImageView.x = model.startXCoordinate
+            startImageView.y = model.startYCoordinate
+            finishImageView.x = model.finishXCoordinate
+            finishImageView.y = model.finishYCoordinate
         }
 
         startImageView.setOnTouchListener(object : View.OnTouchListener {

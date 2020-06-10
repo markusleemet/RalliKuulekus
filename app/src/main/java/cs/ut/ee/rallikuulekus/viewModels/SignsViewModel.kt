@@ -60,9 +60,9 @@ class SignsViewModel(application: Application) : AndroidViewModel(application) {
         signs.forEach {
             val dbSignEntity = DbSignEntity(0, id, it.xCoordinate, it.yCoordinate, it.rkClass, it.position, it.rotation.name)
             db.DbSignDAO().addSign(dbSignEntity)
-
         }
-
+        db.DbStartSignDAO().addStartSign(DbStartEntity(0, startXCoordinate, startYCoordinate, id))
+        db.DbFinishSignDAO().addFinishSign(DbFinishEntity(0, finishXCoordinate, finishYCoordinate, id))
     }
 
     fun initNewSchema(aName: String, aDescription: String) {
@@ -73,13 +73,18 @@ class SignsViewModel(application: Application) : AndroidViewModel(application) {
     }
 
     fun initExistingSchema(id: Int) {
-        thread {
-            val schema = db.DbSchemaDAO().getSchemaWithId(id)
-            name = schema!!.name
-            description = schema.description
-            this.id = id
-            schemaDate = schema.date
-        }
+        val schema = db.DbSchemaDAO().getSchemaWithId(id)
+        val startSign = db.DbStartSignDAO().getStartSignWithSchemaId(id)
+        val finishSign = db.DbFinishSignDAO().getFinishSignWithSchemaId(id)
+        name = schema!!.name
+        description = schema.description
+        this.id = id
+        schemaDate = schema.date
+        startXCoordinate = startSign.xCoordinate
+        startYCoordinate = startSign.yCoordinate
+
+        finishXCoordinate = finishSign.xCoordinate
+        finishYCoordinate = finishSign.yCoordinate
     }
 
     fun getSignsToPutOnScreen(id: Int): ArrayList<SignOnTheSchema> {

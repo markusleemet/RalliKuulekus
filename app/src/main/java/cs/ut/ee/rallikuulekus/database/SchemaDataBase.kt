@@ -11,7 +11,7 @@ import cs.ut.ee.rallikuulekus.entities.DbSchemaEntity
 import cs.ut.ee.rallikuulekus.entities.DbSignEntity
 import cs.ut.ee.rallikuulekus.entities.DbStartEntity
 
-@Database(entities = arrayOf(DbSchemaEntity::class, DbSignEntity::class, DbStartEntity::class, DbFinishEntity::class), version = 11, exportSchema = false)
+@Database(entities = arrayOf(DbSchemaEntity::class, DbSignEntity::class, DbStartEntity::class, DbFinishEntity::class), version = 12, exportSchema = false)
 abstract class SchemaDataBase : RoomDatabase() {
     abstract fun DbSchemaDAO(): DbSchemaDAO
     abstract fun DbSignDAO(): DbSignDAO
